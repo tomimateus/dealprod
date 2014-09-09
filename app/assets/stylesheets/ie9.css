@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	background:transparent;
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#cbeafa', endColorstr='#b1e7dd');
+	zoom: 1;
+	
+}
+
+#main-content {
+	background:transparent;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50ffffff,endColorstr=#50ffffff); 
+	zoom: 1;
+	
+}
+

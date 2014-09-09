@@ -1,0 +1,754 @@
+<% if current_user.nil?%>
+
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>dealhunter</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- Le styles -->
+
+      <link href="/assets/bootstrap.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+      <link href="/assets/dealhunter.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+      <link href="/assets/formtastic.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+      <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+      <script src="../assets/bootstrap-dropdown.js"></script>
+
+
+      <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+      <script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+      <script src="/assets/jquery-ui.js?body=1" type="text/javascript"></script>
+      <script src="/assets/active_admin/lib/namespace.js?body=1" type="text/javascript"></script>
+      <script src="/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" type="text/javascript"></script>
+      <script src="/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" type="text/javascript"></script>
+      <script src="/assets/active_admin/components/jquery.aa.popover.js?body=1" type="text/javascript"></script>
+      <script src="/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" type="text/javascript"></script>
+      <script src="/assets/active_admin/pages/application.js?body=1" type="text/javascript"></script>
+      <script src="/assets/active_admin/pages/batch_actions.js?body=1" type="text/javascript"></script>
+      <script src="/assets/active_admin/application.js?body=1" type="text/javascript"></script>
+      <script src="/assets/active_admin/base.js?body=1" type="text/javascript"></script>
+      <script src="/assets/jquery_nested_form.js?body=1" type="text/javascript"></script>
+      <script src="/assets/jquery.tagsinput.js?body=1" type="text/javascript"></script>
+      <script src="/assets/jquery.tokeninput.js?body=1" type="text/javascript"></script>
+      <script src="/assets/bootstrap.js?body=1" type="text/javascript"></script>
+      <script src="/assets/active_admin.js?body=1" type="text/javascript"></script>
+      <script src="/assets/batches.js?body=1" type="text/javascript"></script>
+      <script src="/assets/billings.js?body=1" type="text/javascript"></script>
+      <script src="/assets/bootstrap-alert.js?body=1" type="text/javascript"></script>
+      <script src="/assets/bootstrap-collapse.js?body=1" type="text/javascript"></script>
+      <script src="/assets/bootstrap-dropdown.js?body=1" type="text/javascript"></script>
+      <script src="/assets/bootstrap-filestyle-0.1.0.js?body=1" type="text/javascript"></script>
+      <script src="/assets/bootstrap-modal.js?body=1" type="text/javascript"></script>
+      <script src="/assets/bootstrap-tab.js?body=1" type="text/javascript"></script>
+      <script src="/assets/bootstrap-transition.js?body=1" type="text/javascript"></script>
+      <script src="/assets/bootstrap.min.js?body=1" type="text/javascript"></script>
+      <script src="/assets/carousel/helper-plugins/jquery.ba-throttle-debounce.min.js?body=1" type="text/javascript"></script>
+      <script src="/assets/carousel/helper-plugins/jquery.mousewheel.min.js?body=1" type="text/javascript"></script>
+      <script src="/assets/carousel/helper-plugins/jquery.touchSwipe.min.js?body=1" type="text/javascript"></script>
+      <script src="/assets/carousel/helper-plugins/jquery.transit.min.js?body=1" type="text/javascript"></script>
+      <script src="/assets/carousel/jquery-1.8.2.min.js?body=1" type="text/javascript"></script>
+      <script src="/assets/carousel/jquery.carouFredSel-6.2.0-packed.js?body=1" type="text/javascript"></script>
+      <script src="/assets/carousel/jquery.carouFredSel-6.2.0.js?body=1" type="text/javascript"></script>
+      <script src="/assets/credits.js?body=1" type="text/javascript"></script>
+      <script src="/assets/faqs.js?body=1" type="text/javascript"></script>
+      <script src="/assets/html5shiv.js?body=1" type="text/javascript"></script>
+      <script src="/assets/jcalendar.js?body=1" type="text/javascript"></script>
+      <script src="/assets/jquery.tipsy.js?body=1" type="text/javascript"></script>
+      <script src="/assets/pages.js?body=1" type="text/javascript"></script>
+      <script src="/assets/slider/jquery-1.9.0.min.js?body=1" type="text/javascript"></script>
+      <script src="/assets/slider/jquery.nivo.slider.js?body=1" type="text/javascript"></script>
+      <script src="/assets/slider/jquery.nivo.slider.pack.js?body=1" type="text/javascript"></script>
+      <script src="/assets/application.js?body=1" type="text/javascript"></script>
+
+      <!--    <link href="/assets/bootstrap-responsive.css" rel="stylesheet">
+      -->
+      <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!--[if lt IE 9]>
+      <script src="/assets/html5shiv.js"></script>
+      <![endif]-->
+
+    </head>
+
+
+    <body id="page-micuenta">
+
+    <!--header-->
+    <header id="top" class="light-shadowed">
+    <div class="container">
+        <div class="row">
+          <div class="span3" id="logo-header"><a href="/offers"><img src="/assets/logo-header.png"></a></div>
+
+        </div><!--end row-->
+      </div><!--end container header-->
+    </header><!--end header-->
+
+
+
+    <div class="container" id="main-content" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+         xmlns="http://www.w3.org/1999/html">
+    <div class="rounded-borders ">
+    <section class="span11 rounded-borders light-shadowed">
+    <header class="out rounded-borders-top">
+    <h2>TERMINOS Y CONDICIONES</h2>
+    </header>
+
+    <div class="wrapper-padding">
+
+    <div class="wrapper">
+    <article>
+    <p>La utilización de los servicios o la contratación de productos en http://www.dealhunter.com.ar suponen la aceptación de los siguientes Términos y Condiciones Generales de Uso:</p>
+
+    <hr>
+    <h5>GENERAL</h5>
+    <p> www.dealhunter.com es un sitio de internet de titularidad de GRUPO ESTEPA S.R.L, con domicilio en la calle Av. Coronel Díaz 2680, planta baja 4, Capital Federal, Buenos Aires, Argentina.
+    <p>Grupo Estepa S.R.L es responsable y opera bajo los siguientes nombres de denominación: dealhunter Argentina.   </p>
+    <p>Todos los términos contenidos en este documento conjuntamente con las Condiciones Generales del Contrato de Servicios Turísticos, el detalle de los servicios a prestar, los billetes del transporte, las órdenes de servicios (reservas), las facturas emitidas y todo otro documento que contenga especificaciones sobre el viaje, conformarán el contrato de viaje.</p>
+
+
+    <ol>
+
+    <h5>Términos y Condiciones generales</h5>
+    <p>www.dealhunter.com es un sitio de internet de titularidad de GRUPO ESTEPA S.R.L, con domicilio en la calle Av. Coronel Díaz 2680, planta baja 4, Capital Federal, Buenos Aires, Argentina. </p>
+    <p>Grupo Estepa S.R.L es responsable y opera bajo los siguientes nombres de denominación: dealhunter Argentina. </p>
+    <p>Todos los términos contenidos en este documento conjuntamente con las Condiciones Generales del Contrato de Servicios Turísticos, el detalle de los servicios a prestar, los billetes del transporte, las órdenes de servicios (reservas), las facturas emitidas y todo otro documento que contenga especificaciones sobre el viaje, conformarán el contrato de viaje.</p>
+    <li>
+      <h5>Descripción del sitio y del servicio </h5>
+      <p>El Sitio Web consiste en una plataforma de compra, que permite a sus Miembros, durante un período de tiempo, acceder a un producto, prestación y/o servicio ofrecido por otras empresas (en adelante los “Proveedores”) a un precio especial, el cual se tornará aplicable siempre que se cumplan las condiciones estipuladas para cada uno de los productos, prestaciones y/o servicios ofrecidos. Los Proveedores son quienes ofrecen sus productos, prestaciones y/o servicios a través de reservas en el Sito Web y son los Proveedores los emisores de las reservas. Las prestaciones, productos o servicios indicados en las reservas son responsabilidad exclusiva de los Proveedores indicados en la oferta y estarán sujetos a sus respectivos términos y condiciones, los cuales estarán indicados en el Sitio Web o señaladas en el mismo a través de un link. dealhunter no adeuda las prestaciones, servicios o productos previamente representados por las reservas adquiridos por los Miembros. Cada oferta indicará los parámetros, detalles y condiciones específicas de los servicios, prestaciones y/o productos promocionados y de la forma de uso de la reserva, estos términos y condiciones no estarán determinados por dealhunter, sino que en cada caso los términos y condiciones de uso de las reservas y de los servicios y/o prestaciones y/o entrega de productos quedan establecidos por los Proveedores. Las ofertas son vigentes en el territorio de la República Argentina (en adelante el “Territorio”). Las descripciones de los servicios, prestaciones y/o productos promocionados en el Sitio Web, se realizan en base a la información proporcionada por los Proveedores. Las fotografías, imágenes y/o videos relativos a los servicios, prestaciones y/o productos son ilustrativos.</p>
+      <ol type="a">
+        <li>
+          <b> Registro de Miembros</b>
+          <p>Para poder acceder a Sitio Web y a los Servicios que se promocionan a través del Sitio Web es necesario aplicar a la membresía al ingresar al Sitio web haciendo click en el botón ”Inscribite” y completando todos los datos requeridos de la forma que se establece en dicho apartado, a fin de que podamos enviarle las promociones, ofertas y descuentos publicados. A los efectos de que sea activada su solicitud de registración le será remitido a su casilla un e-mail solicitando la confirmación del registro. Cuando el Miembro haya confirmado que desea registrarse, dealhunter le remitirá un correo electrónico confirmando su registro. Recuerde que, en cualquier momento, podrá acceder a los datos que nos ha facilitado, modificarlos o cancelarlos a través del sitio web o bien enviándonos un e-mail a info@dealhunter.com. Los datos de “e-mail” y “contraseña” son personales e intransferibles y, por tanto, el Miembro se obliga a no comunicarlos a ningún tercero ni ceder su uso. En caso de que dealhunter detecte un uso fraudulento del “e-mail” y “contraseña”, se reserva el derecho a cancelar el acceso a sus Servicios. A los efectos de hacerse Miembro, es obligatorio completar el formulario en todos sus campos para poder utilizar los Servicios que ofrece el Sitio Web. La información o datos personales registrados en cada uno de los campos del formulario deben ser exactos, precisos y verdaderos, Adicionalmente, el Miembro asume el compromiso de mantener actualizada su información en “MI CUENTA”. dealhunter no se responsabiliza por la veracidad de la información entregada por los Miembros. Los Miembros garantizan y responden, en cualquier caso, por la veracidad, exactitud, vigencia y autenticidad de los datos personales ingresados. Una vez que el Miembro se haya registrado, accederá a “MI CUENTA” mediante el ingreso de su E-mail y Contraseña. La Cuenta es personal, única e intransferible, y está prohibido que un mismo Miembro registre o posea más de una cuenta. En caso que dealhunter detecte distintas cuentas que contengan datos coincidentes o relacionados a un mismo Miembro, podrá inhabilitar todas o algunas de éstas. El Miembro será responsable por todas las operaciones efectuadas en “MI CUENTA”, ya que el acceso a la misma está restringido con el uso de su E-mail y Contraseña, de conocimiento exclusivo del Miembro. El Miembro se compromete a notificar a dealhunter en forma inmediata, enviándonos un e-mail a info@dealhunter.com, cualquier uso no autorizado de “MI CUENTA”, así como el ingreso por terceros no autorizados a la misma. Se aclara que está prohibida la venta, cesión o transferencia de la Cuenta bajo ningún título. dealhunter se reserva el derecho de suspender temporal o definitivamente o de rechazar cualquier solicitud de registro o de cancelar un registro previamente aceptado, sin que esté obligado a comunicar o exponer las razones de su decisión y sin que ello genere algún derecho a indemnización o resarcimiento.
+          </p>
+        </li>
+        <li>
+          <b>Ofertas de la semana</b>
+          <p>Cada semana habrá ofertas nuevas que tendrán una duración de entre 5 y 7 días. Para acceder a la oferta deseada de la semana solo tenés que hacer click en el botón “Ver Oferta” que aparece junto a la oferta y comprar la “Estadia” realizando los pasos necesarios para tal efecto. Al finalizar el proceso de compra, recibirás un e-mail con la confirmación y un número de reserva el cual se utilizar para informarle a nuestro proveedor a la hora de utilizar el servicio. También podrá ser solicitado para la identificación de su compra en nuestro sistema de atención al cliente. El mail de confirmación contiene información de cuál es la fecha caducidad, que suele ser en torno a los 6 meses.
+          </p>
+        </li>
+        <li>
+          <b>Publica con nosotros</b>
+          <p>dealhunter realiza cada semana una campaña de email a sus Miembros con una oferta imbatible para disfrutar de un producto o servicio de uno de nuestros comercios asociados. El modelo de campaña de marketing que expira semanalmente genera un gran número de ventas en un corto espacio de tiempo (1 semana). Los seguidores de dealhunter remiten y recomiendan la oferta a sus amigos a través de las redes sociales, generando un gran volumen de ventas y una gran notoriedad para nuestros comercios asociados. Para conocer las mejores ofertas de productos y servicios que puedan interesar a los Miembros-clientes de dealhunter podés contactarnos llenando el formulario de “Contactanos”.
+          </p>
+        </li>
+        <li>
+          <b>Recomendá dealhunter</b>
+          <p> A través de nuestra opción de Invita un amigo, el Miembro tendrá la posibilidad de obtener $30 invitando a un amigo a hacerse miembro de dealhunter. Ganarás un crédito de $30 por cada amigo que se registre cuando éste realice su primera compra. Por eso, podés comprobar en todo momento la evolución de tus amigos invitados antes de esa fecha, registrándote y accediendo a tu cuenta. El crédito disponible lo podés aplicar siempre que se cumplan las condiciones específicas del apartado "Crédito Disponible".
+          </p>
+        </li>
+        <li>
+          <b>Crédito Disponible</b>
+          <p>Podés acumular crédito en tu cuenta dealhunter de las siguientes maneras: - El Crédito dealhunter: Lo conseguís cuando invitas a un amigo a hacerse miembro y el mismo realiza una compra, o por compensaciones. Condiciones de uso: Son de un solo uso, tienen una caducidad inferior a 30 días y se pueden utilizar en compras superiores al cuádruple del valor del crédito utilizado salvo en promociones específicas. - Crédito de Gift Card: Lo conseguís cuando dealhunter te regala una de sus Gift Cards. Condiciones de uso: podés utilizarlas en más de una compra hasta que gastes todo el crédito, no requiere un importe mínimo de compra, y tendrá una caducidad que se ajustará a las condiciones particulares de esa oferta. - Crédito por Devoluciones: Con una devolución de compra, se suma a tu cuenta el importe de la compra o de la oferta que devolviste. Condiciones de uso: siempre que la devolución no contenga como origen de compra otro crédito (es decir, “Crédito dealhunter”, “Crédito de GiftCard”) podés utilizar el crédito devolución en más de una compra hasta que gastes todo el crédito, no requiere un importe mínimo de compra y tienen caducidad de 1 año. En caso contrario, deberás consultar las condiciones específicas del crédito utilizado anteriormente que aparecen indicadas en este apartado.</p>
+          <p>Para realizar cada compra sólo tenés que elegir utilizar el crédito disponible a la hora de realizar la compra. Sin perjuicio de lo anterior, pueden existir algunas ofertas cuyo pago no podrá ser efectuado con crédito. En caso de que exista dicha restricción, se indicará claramente en la descripción de la oferta.
+          </p>
+        </li>
+        <li>
+          <b>Concursos</b>
+          <p>dealhunter, puede realizar concursos en su sitio. La participación en estos concursos es completamente voluntaria. Los datos solicitados pueden incluir información personal identificable. Al participar, acepta todos los términos y condiciones, que se especificarán claramente en las normas.
+          </p>
+        </li>
+      </ol>
+
+    </li>
+    <li>
+      <h5>Condiciones de uso y su aceptación  </h5>
+      <p>Este documento describe los términos y condiciones generales (en adelante los “TCG”) aplicables al acceso y uso de los servicios ofrecidos por GRUPO ESTEPA S.R.L (en adelante “dealhunter”) mediante su sitio www.dealhunter.com.ar. Toda persona que desee acceder y usar el sitio web o los servicios promocionados y/o publicitados por dealhunter mediante su sitio web (en adelante los “Servicios”), podrá hacerlo, registrándose y sujetándose a los TCG aplicables, junto con todas las demás políticas y principios que rigen el Sitio Web y que son incorporados al presente (en adelante el/los “Miembro/s”). Estos TCG tienen carácter obligatorio y vinculante, por lo tanto toda persona que no los acepte, no podrá ingresar ni utilizar el sitio web y/o los Servicios. En el proceso de registración el Miembro deberá indicar si acepta nuestros Términos y Condiciones y nuestra Política de Privacidad. Por favor, lea detenidamente estos apartados, puesto que contienen información relevante sobre sus derechos, sobre la forma en que tratamos y obtenemos sus datos personales, así como las normas que regulan y vinculan la relación entre dealhunter y el Miembro. El uso del sitio web implica la aceptación sin reservas por parte del Miembro de los TCG y de todo otro documento al que se haga referencia en el presente. dealhunter se reserva el derecho de modificar unilateralmente los TCG, los que serán obligatorios desde su publicación en el Sitio Web o desde su notificación al Miembro, lo que suceda primero. Mediante la aceptación de los presentes TCG, el Miembro declara que es una persona mayor de edad y con capacidad legal para contratar, conforme a las leyes generales de la República Argentina. No podrán adquirir los Servicios que se brindan a través del sitio web las personas que no tengan la capacidad legal para contratar y los menores de edad. Los actos que éstos realicen en el sitio web serán responsabilidad de sus padres, tutores, encargados o curadores, y por tanto se considerarán realizados por éstos en ejercicio de la representación legal con la que cuentan. El Miembro tendrá acceso a la información sobre productos y servicios turísticos ofertados en el sitio web de dealhunter los proveedores mayoristas de los citados servicios y, además, podrá realizar compras de paquetes turísticos y servicios de aquellos proveedores u organizadores de viajes combinados que elija, quedando sujeto a los términos y condiciones específicos que tales proveedores u organizadores de viajes combinados establezcan para cada caso. En este sentido las ofertas e información de productos turísticos que figuran en el sitio web de dealhunter proceden, son elaboradas y mantenidas, por los terceros proveedores de servicios turísticos y nunca pueden ser consideradas como ofertas directas de dealhunter a los Miembros de la sitio web. En consecuencia dealhunter, no se hace responsable de la legalidad y de la redacción conforme a derecho de las condiciones de contratación introducidas por los proveedores de viajes. A continuación se enumeran las condiciones generales del contrato de viaje combinado estándar que el Miembro acepta explícitamente al hacer una reserva en dealhunter. En caso de que algún viaje incluya condiciones especiales de contratación no incluidas en las condiciones generales, estas serán remitidas por correo electrónico al Miembro registrado a fin que tenga constancia y las acepte activamente al contratar su viaje. El sitio web de dealhunter constituye un sitio destinado a la promoción, difusión y comercialización de servicios de múltiples operadores turísticos. La actividad de la Sociedad es la prestación de servicios de promoción y cobranza, facilitando la conexión entre el Miembro del sitio y el proveedor del servicio. dealhunter en ningún caso es el proveedor del servicios, no brinda ni presta por si misma tales productos o servicios, resultando intermediario entre el Miembro y el proveedor del servicio. El Miembro reconoce y acepta que dealhunter no es responsable en relación a las contingencias propias de la relación que el Miembro pueda entablar con el proveedor del producto o servicio.</p>
+    </li>
+    <li>
+      <h5>Operatoria del la reserva y pago de los servicios</h5>
+      <p>El miembro que compra una oferta, realiza una reserva. Dado el carácter de la oferta, en el momento de compra dealhunter reclamará al consumidor la totalidad del precio de la oferta solicitada. De no realizarse el pago correspondiente, la reserva no será tomada Cesión de la reserva El Miembro tiene la facultad de desistir del viaje contratado en cualquier momento antes de la salida. No obstante, si este desistimiento se produce dentro de los 30 días anteriores a la salida del viaje, deberá abonar una penalización en función del tiempo que falte para la salida, que será de:</p>
+      <ol type="a">
+        <li>
+          <p>El 30% del precio del viaje si se produce con una antelación entre los 30 y 15 días antes de la salida.</p>
+        </li>
+        <li>
+          <p>El  55% del precio del viaje, si se produce con una antelación entre los 15 y 10 días antes de la salida.</p>
+        </li>
+        <li>
+          <p>El  75% del precio del viaje, si se produce con una antelación entre los 10 y 7 días de la salida.</p>
+        </li>
+        <li>
+          <p>El 100% del precio del viaje, si se produce con una antelación de 7 días de la salida.</p>
+        </li>
+      </ol>
+      <p>El Miembro no tendrá que abonar porcentaje alguno en concepto de penalización si el desistimiento tiene lugar por causa de fuerza mayor. A estos efectos, se considerará causa de fuerza mayor la muerte, el accidente o enfermedad graves del consumidor o de alguna de las personas con quien conviva o cualquier supuesto análogo que le impida participar en el viaje. En todos los casos, el Miembro deberá abonar los gastos de gestión [PESOS ARGENTINOS CINCUENTA ($50) por persona y anulación que produzca el desistimiento. El desistimiento produce efectos desde el momento en que la voluntad de desistir del Miembro llega al conocimiento de dealhunter. Conocido el desistimiento, dealhunter devolverá al Miembro las cantidades que hubiese abonado en el plazo máximo de un mes, deducidos los gastos de gestión y, en su caso, los gastos de anulación justificados y las penalizaciones. Si el viaje estuviera sujeto a condiciones económicas especiales de contratación, tales como flete de aviones, buques, tarifas especiales u otros análogos, los gastos de gestión, los gastos de anulación y las penalizaciones serán los que indique de modo explícito el folleto para ese viaje. Con carácter general, una vez emitido físicamente un billete aéreo, sus gastos de anulación alcanzan el 100% de su importe. Las tarifas especiales de avión y plazas en vuelos "chárter" o "especiales" conllevan, igualmente, unos gastos de anulación que alcanzan el 100% de su importe. Falta de presentación a la salida Existirá falta de presentación a la salida si el Miembro no comunica su voluntad de no llevar a cabo el viaje y no se presenta en el tiempo y lugar previstos para la salida. En este caso, pierde el derecho a la devolución de las cantidades entregadas y continúa obligado a abonar las que estuvieran pendientes de pago. No obstante, si la falta de presentación tiene lugar por causa de fuerza mayor, el consumidor tendrá derecho a que se le devuelvan las cantidades entregadas, deducidos los gastos de gestión y los gastos de anulación. A estos efectos, se considerará causa de fuerza mayor la muerte, el accidente o enfermedad graves del consumidor o de alguna de las personas con quien conviva o cualquier supuesto análogo que le impida participar en el viaje y comunicar a la agencia esa imposibilidad antes de la salida. Desistimiento del Miembro durante el viaje El consumidor tiene el derecho a desistir del contrato de viaje combinado una vez comenzado el viaje, pero no podrá reclamar la devolución de las cantidades entregadas y continuará obligado a abonar las que estén pendientes de pago. Medios de pago El importe de los servicios turísticos que se contrataren a través de la WEB de dealhunter, podrá ser cancelado mediante diferentes alternativas de pago instantáneo brindadas por Mercado Pago. Moneda de pago Todos los pagos debidos en virtud de los servicios contratados deberán de efectuarse en el monto equivalente en moneda de curso legal en la República, al día del efectivo pago. Facturación El servicio será facturado por el tercero proveedor, distinto de la Sociedad. Siendo exclusiva responsabilidad del Miembro la obtención de la misma.</p>
+    </li>
+    <li>
+      <h5>Condiciones generales del contrato de servicios turísticos </h5>
+      <p>Sin perjuicio de toda otra disposición incluida en el presente texto, la Sociedad pone en conocimiento de los Miembros que en virtud de la Resolución Nº 256/2000, del Ministerio de Turismo de la Nación, la contratación de servicios turísticos se ajustara a las siguientes condiciones:</p>
+      <ol type="a">
+        <li>
+          <b> Solicitudes y pagos</b>
+          <ol>
+            <li>
+              <p>El precio y/o reservación de los servicios que componen el tour quedan sujetos a modificaciones sin previo aviso cuando se produzca una alteración en los servicios, modificaciones en los costos o en los tipos de cambio previstos, por causas no imputables a las partes.</p>
+            </li>
+            <li>
+              <p>Todos los importes pagados antes de la confirmación definitiva de los servicios son percibidos en concepto de reserva. La confirmación definitiva de los servicios y precios respectivos se producirá con la emisión de pasajes y/u órdenes de servicios y la facturación correspondiente.</p>
+            </li>
+            <li>
+              <p>Las operaciones a crédito deberán satisfacer los requisitos propios fijados para las mismas. En su defecto el interesado deberá cumplimentar el pago de los saldos en los plazos y condiciones establecidos en la contratación.</p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <b>Los precios incluyen</b>
+          <p>Alojamiento en los hoteles mencionados en los itinerarios u otros de igual o mayor categoría, ocupando habitaciones simples, dobles, triples, etc. Según tarifa elegida, con baño privado e impuestos. Régimen de comidas según se indique en cada oportunidad. Visitas y excursiones que se mencionen. Traslados hasta y desde aeropuertos, terminales y hoteles, cuando se indique. La cantidad prevista de días de alojamiento teniendo en cuenta que el día de alojamiento hotelero se computa desde las quince horas y finaliza a las doce horas del día siguiente, independientemente de la hora de llegada y de salida y de la utilización completa o fraccionada del mismo. La duración del tour será indicada en cada caso tomando como primer día, el de salida y como último incluido el día de salida del destino, independientemente del horario de salida o de llegada en el primer día o en el último.</p>
+        </li>
+        <li>
+          <b>Servicios o rubros no incluidos</b>
+          <ol>
+            <li>
+              <p>Extras, bebidas, lavado de ropa, propinas, tasas de embarque, tasas sobre servicios, IVA y otros impuestos, actuales y/o futuros, ni ningún servicio que no se encuentre expresamente indicado en la orden de servicio emitida por el agente de viajes.</p>
+            </li>
+            <li>
+              <p>Estadias, comidas y/o gastos adicionales o perjuicios producidos por cancelaciones, demoras en las salidas o llegadas de los medios de transporte, o por razones imprevistas ajenas a la empresa. </p>
+            </li>
+            <li>
+              <p>Alimentación en ruta, excepto aquellas que estuviesen expresamente incluidas en los programas.</p>
+            </li>
+            <li>
+              <p>Los gastos e intereses en las operaciones a crédito. </p>
+            </li>
+          </ol>
+        <li>
+          <b>Limitaciones al derecho de permanencia</b>
+          <p>La empresa se reserva el derecho de hacer que abandone el tour en cualquier punto del mismo todo pasajero cuya conducta, modo de obrar, estado de salud u otras razones graves a juicio de la empresa provoque peligro o cause molestias a los restantes viajeros o pueda malograr el éxito de la excursión o el normal desarrollo de la misma.
+          </p>
+        </li>
+        <li>
+          <b>Documentación</b>
+          <p>Para los viajes al exterior es necesario atender la legislación vigente en cada caso. Es responsabilidad inexcusable de la agencia informar fehacientemente y con anticipación suficiente sobre los requisitos que exigen las autoridades migratorias, aduaneras y sanitarias de los destinos que incluye el tour, siendo responsabilidad exclusiva del pasajero contar con la documentación personal que exijan las autoridades mencionadas anteriormente en debida forma.
+          </p>
+        </li>
+        <li>
+          <b>Cancelaciones</b>
+          <ol>
+            <li>
+              <p>En caso de desistimiento de operaciones a crédito no tendrán reembolso los importes abonados en concepto de informe, gastos administrativos, sellados e intereses.</p>
+            </li>
+            <li>
+              <p>Cuando se trate de desistimiento que afecte a servicios contratados en firme por la agencia, el reembolso de los mismos estará sujeto a las condiciones contractuales bajo las cuales presten sus servicios las empresas respectivas. En todos los casos de reintegros, la agencia podrá retener el precio de los gastos incurridos más la comisión del diez por ciento de los servicios contratados con terceros.</p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <b>Transporte no regular o charter</b>
+          <p>Rige lo estipulado en el punto anterior. Sin perjuicio de ello, en estos casos sólo se reintegrará la proporción del precio correspondiente a los servicios terrestres (hotelería, pensión, excursiones) que determine el organizador según la modalidad con que operen los prestadores de los servicios. Para que ésta cláusula sea válida deberá determinarse en el primer documento entregado al pasajero la calidad del transporte.</p>
+        </li>
+        <li>
+          <b>Cesión y transferencia</b>
+          <p>El derecho que confiere al cliente el contrato de servicios turísticos, podrá ser cedido o transferido a otras personas hasta 30 días antes de la fecha de salida, siempre que no se opongan a ello las prescripciones del transportista, del hotelero o prestador de los servicios. En los supuestos que los pasajeros sean de distintas edades (mayores-menores), se ajustará el precio según tarifarios. En todos los casos de cesión o transferencia, la empresa podrá percibir el sobreprecio del 10% del monto convenido.
+          </p>
+        </li>
+        <li>
+          <b>Responsabilidad</b>
+          <p>La empresa declara expresamente que actúa en el carácter de intermediaria en la reserva o contratación de los distintos servicios vinculados e incluidos en el respectivo tour o reservación de servicios: hoteles, restaurantes, medios de transportes u otros prestadores. No obstante ello las responsabilidades de la empresa, sea que intervenga como organizadora o intermediaria de viaje será determinada conforme las disposiciones. La empresa no se responsabiliza por los hechos que se produzcan por actos de terrorismo, caso fortuito o fuerza mayor, fenómenos climáticos o hechos de la naturaleza que acontezcan antes o durante el desarrollo del tour que impidan, demoren o de cualquier modo obstaculicen la ejecución total o parcial de las prestaciones comprometidas por la empresa, de conformidad con lo dispuesto por el Código Civil.
+          </p>
+        </li>
+        <li>
+          <b>Alteraciones o modificaciones</b>
+          <ol>
+            <li>
+              <p>La empresa se reserva el derecho, por razones técnicas u operativas, de alterar total o parcialmente el ordenamiento diario y/o de servicios que componen el tour, antes o durante la ejecución del mismo.
+              </p>
+            </li>
+            <li>
+              <p>Salvo condición expresa en contrario, los hoteles estipulados podrán ser cambiados por otro de igual o mayor categoría dentro del mismo núcleo urbano sin cargo alguno para el pasajero. Respecto de estas variaciones el pasajero no tendrá derecho a indemnización alguna.
+              </p>
+            </li>
+            <li>
+              <p>La empresa podrá anular cualquier tour cuando se configure alguna de las circunstancias previstas en el art. 24 del Decreto N° 2182/72.
+              </p>
+            </li>
+            <li>
+              <p>Una vez comenzado el viaje, la suspensión, modificación o interrupción de los servicios por parte del pasajero por razones personales de cualquier índole, no dará lugar a reclamo alguno, reembolso o devolución alguna.
+              </p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <b>Cláusula de arbitraje </b>
+          <p>Toda cuestión que surja con motivo de la celebración, cumplimiento, incumplimiento, prórroga o rescisión del presente contrato, podrá ser sometida por las partes a la resolución del Tribunal Arbitral de la Asociación Argentina de Agencias de Viajes y Turismo y/o de los Tribunales Arbitrales que funcionen en sus Regionales. En caso de sometimiento de dicha jurisdicción, los contratantes se sujetan y dan por aceptadas todas las condiciones establecidas por la Reglamentación del Tribunal Arbitral.
+          </p>
+        </li>
+        <li>
+          <b>Normas de aplicación</b>
+          <p>El presente contrato y en su caso la prestación de los servicios, se regirá exclusivamente por estas condiciones generales, por la Ley N° 18.829 y su reglamentación. Las presentes condiciones generales junto con la restante documentación que se entregue a los pasajeros conforman el Contrato de Viaje.
+          </p>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <h5> Forma de pago y seguridad</h5>
+      <p> Los precios indicados en el Sitio Web son en pesos argentinos e incluyen IVA y los demás impuestos que pudiera corresponder a menos que se indique lo contrario. La forma de pago se efectuará a través de MERCADOPAGO (Visa, Mastercard, American Express y otras tarjetas análogas autorizadas en el Sitio Web) excluyendo los medios de pago no instantáneos como Rapipago, Pago fácil, etc y se cargará en la cuenta bancaria del Miembro siempre y cuando se hayan configurado los requisitos indicados en cada oferta. El Miembro proporcionará los datos de su tarjeta de crédito, la fecha de caducidad, los tres (3) dígitos de seguridad, en el momento que realiza el pedido y/o aceptación de la compra de la oferta del servicio y/o producto en cuestión. El Sitio Web no se hace cargo de las gestiones bancarias que el Miembro deba realizar para que éste se encuentre habilitado para efectuar compras por internet. Nuestro servidor utiliza tecnología de encriptación SSL y toda la operación de cobro se realiza a través de la plataforma de cobro segura de la entidad bancaria y/o crediticia asociada. La tecnología de encriptación SSL (Secure Socket Layer) permite que se transmitan en forma segura todos los datos personales solicitados en una transacción, como el nombre, la dirección o el número de tarjeta de crédito. La encriptación es la codificación de datos de tal forma que sólo los involucrados en una transacción puedan interpretarlos. La encriptación evita que individuos ajenos intercepten las transacciones y puedan conocer su contenido. En caso de haberse facturado cargos que no hubiesen correspondido, el Miembro deberá comunicarse inmediatamente con dealhunter a través de la dirección de correo info@dealhunter.com, para resolver dicha cuestión.  Algunos países y Comunidades Autónomas obligan a los hoteles a cobrar algún tipo de tasas turísticas o de estancia. Estas tasas no están incluidas en el precio y deberán ser abonadas por el Miembro. Debiendo el Miembro observar y cumplimentar con los recaudos específicos para la oferta que particularmente éste adquirida.
+      </p>
+    </li>
+    <li>
+      <h5>Cancelaciones</h5>
+      <p>El Miembro que quiera proceder a la devolución de su reserva, deberá notificarlo mediante el envío de un mail a dealhunter: info@dealhunter.com, describiendo las razones que motivan dicho arrepentimiento y previo cumplimiento de algunas formalidades administrativas, le será devuelto como crédito en su cuenta de dealhunter estando disponible el monto para su uso en futuras compras el importe que hubiera abonado.
+      </p>
+    </li>
+    <li>
+      <h5>Derechos y obligaciones del Miembro-cliente</h5>
+      <p> El Miembro se obliga, siendo único responsable, a utilizar los contenidos, productos y servicios ofrecidos por el Sitio Web, de acuerdo con la ley, los presentes TCG, las Políticas de Privacidad y las Condiciones Particulares en su caso y sus actualizaciones, según las normas de la buena fe, la moral y el orden público generalmente aceptadas. El Miembro no tendrá derecho alguno de reclamar indemnización de ningún tipo (directa o indirecta) por las interrupciones temporales o suspensión definitiva del Sitio web o de algún tipo de contenido, producto o servicio ofrecido en el mismo.
+      </p>
+    </li>
+    <li>
+      <h5> Devoluciones</h5>
+      <p>El titular de la reserva tendrá derecho a que dealhunter le reintegre el importe abonado como crédito disponible para futuras compras dentro de la plataforma de dealhunter según los siguientes plazos:
+      <ol type="a">
+        <li>
+          <p>La totalidad del precio si se produce con una antelación de mas de 30 días de la salida.
+          </p>
+        </li>
+        <li>
+          <p> El 70% del precio del viaje si se produce con una antelación entre los 30 y 15 días de la salida.
+          </p>
+        </li>
+        <li>
+          <p>El  45% del precio del viaje, si se produce con una antelación entre los 15 y 10 días de la salida.
+          </p>
+        </li>
+        <li>
+          <p>El  25% del precio del viaje, si se produce con una antelación entre los 10 y 7 días de la salida.
+          </p>
+        </li>
+        <li>
+          <p>El 0% del precio del viaje, si se produce con una antelación de 7 días de la salida.
+
+          </p>
+        </li>
+
+      </ol>
+
+      </p>Dicho reintegro de efectivo deberá solicitarse mediante correo electrónico a info@dealhunter.com. Pasado dichos plazo, el titular de la estadía no tendrá derecho al reintegro. Sin perjuicio de lo anterior, en caso de que el titular no utilice su estadía en la fecha reservada, el mismo se considerará caducado, no siendo posible su devolución, reintegro monetario o utilización.
+
+    </li>
+    <li>
+      <h5>Propiedad intelectual e industrial </h5>
+      <p>Los derechos de propiedad intelectual existentes sobre la presente página web y/o los contenidos, gráficos, logotipos, diseños, imágenes y códigos fuente utilizado para su programación y diseños incluidos en la mismas, así como las marcas, nombres comerciales y diseños industriales contenidos en dicha página web, son de titularidad exclusiva de dealhunter, estando protegidos todos ellos por la ley. Asimismo, pertenecen a dealhunter o a su legítimo titular, proveedor de dealhunter, la totalidad de los contenidos audiovisuales, musicales o de otra índole, que se ofrezcan en el presente web, así como cualquier otro contenido y apariencia de la presente web, estando todos ellos protegidos por la normativa nacional e internacional aplicable. Queda prohibida la reproducción, distribución, comunicación pública, transformación y/o puesta a disposición del público de todo o parte de la página web y/o sus contenidos, gráficos, logotipos, diseños, imágenes y códigos fuente utilizado para su programación y diseños, marcas, nombres comerciales y diseños industriales, sin la previa autorización expresa de su legítimo titular. Por la descarga de estos contenidos, productos y/o servicios de esta web, el Miembro no adquiere ningún derecho sobre los mismos, pudiendo simplemente disfrutarlos en su ámbito particular y familiar, conforme a las “CONDICIONES PARTICULARES” establecidas en cada caso. Queda expresamente prohibida cualquier otra utilización, acceso, reproducción, distribución, comunicación pública, transformación, traducción, alquiler, venta, explotación comercial o puesta a disposición de terceras personas de ninguna forma, y especialmente en una red informática o a través de tecnologías de acceso remoto, de todo o de parte de los contenidos, productos y/o servicios incluidos en el Sitio Web. La utilización no autorizada de los contenidos, productos y/o servicios de la presente web así como la lesión a los derechos de propiedad intelectual o industrial de sus contenidos, productos y/o servicios dará lugar a las correspondientes responsabilidades legales. En caso de que el Miembro detecte cualquier actividad susceptible de vulnerar algún derecho de propiedad intelectual, industrial o de cualquier tipo de derecho, le rogamos que nos lo comunique a través del formulario de contacto presente en el sitio web o a través de la dirección de e-mail reservas@dealhunter.com. </p>
+    </li>
+    <li>
+      <h5>Tratamiento de los datos personales </h5>
+      <p>dealhunter garantiza que el tratamiento de los datos personales de los Miembros que se registren en la página web se realizará de conformidad con lo dispuesto en la legislación aplicable en la República Argentina, en especial la ley N° 25.326 (Protección de Datos Personales) y su Decreto Reglamentario y en la Política de Privacidad. Es posible que en el Sitio Web el Miembro encuentre links, enlaces o banners que lo re-direccionen a otra página web. El Miembro debe saber que en este caso, le será de aplicación una política de privacidad distinta a la del Sitio Web, por lo que recomendamos que las lea detenidamente. Además en estas web es posible que se utilicen cookies u otras tecnologías con la finalidad de recabar sus datos. dealhunter no se hace responsable de los contenidos de las web a las que el Miembro pueda ser redireccionado.
+      </p>
+    </li>
+    <li>
+      <h5> Responsabilidad</h5>
+      <p>dealhunter sólo pone a disposición de los Miembros un espacio virtual que permite la relación entre los Miembros y los proveedores de servicios turísticos. dealhunter no es el propietario de los productos y/o servicios ofrecidos, no tiene posesión de ellos. dealhunter no se hace responsable de la existencia, calidad, cantidad, estado, integridad de los bienes, productos o servicios ofrecidos en el sitio web. Cada proveedor conoce y acepta ser el exclusivo responsable por las ofertas de los productos o servicios, debiendo el Miembro dirigirse directamente al proveedor para realizar cualquier reclamo. dealhunter no responde frente al Miembro por incumplimiento de obligaciones del proveedor a la hora de la prestación del servicio o entrega del producto. En caso de que el Miembro tuviere algún problema, deberá notificarlo inmediatamente a dealhunter quien intentará encontrar una solución, a tales efectos, se le solicita remita un e-mail a reservas@dealhunter.com. dealhunter no se responsabiliza del mal uso que se realice de las aplicaciones o de los contenidos de su página web, recayendo únicamente la responsabilidad en aquel Miembro que haya realizado el mal uso. dealhunter declina toda responsabilidad por la información contenida en la página web de terceros a los que se pueda acceder mediante enlaces (links) desde esta página web, o por la información contenida en páginas web de terceros vinculada de algún modo a esta página web. dealhunter no asume responsabilidad alguna por el intercambio de información entre Miembros a través de su página web. La responsabilidad de las manifestaciones difundidas en esta página web corresponde a quienes las realizan. dealhunter no asume responsabilidad alguna por la divulgación, puesta a disposición de terceros y/o descarga de cualquier contenido realizada por los Miembros, correspondiendo dicha responsabilidad a dicho Miembro. dealhunter cooperará, si es requerido por orden judicial o por las autoridades pertinentes, en la identificación de las personas responsables de aquellos usos que violen la ley. dealhunter se reserva el derecho a denegar o retirar el acceso a su página web, en cualquier momento y sin necesidad de preaviso, por iniciativa propia o a instancia de un tercero, a aquellos Miembros que violen la ley o que incumplan las presentes TCG, la Política de Privacidad, o lo dispuesto en las Condiciones Particulares o bien vulneren los derechos existentes sobre los contenidos, productos y/o servicios de la presente web. dealhunter rechaza toda responsabilidad derivada de la mala utilización de los contenidos y de esta página web, reservándose el derecho a actualizarlos, restringirlos o eliminarlos de manera transitoria o definitiva cuando considere oportuno. Asimismo, dealhunter declina toda responsabilidad por cualquier interrupción de la página web que se pudiese producir por la actualización o mejora de la misma o por causas ajenas. Los Miembros mantendrán indemne a dealhunter, sus directivos, administradores, representantes y empleados, por cualquier reclamo o demanda de terceros relacionados con las actividades promovidas dentro del Sitio Web o por el incumplimiento de las presentes TCG, la Política de Privacidad, o lo dispuesto en las Condiciones Particulares y demás normativa que se entienda incorporada al presente o por la violación de cualesquiera leyes o derechos de terceros.
+      </p>
+    </li>
+    <li>
+      <h5>Enlaces (links) y cookies</h5>
+      <p> En algunas ocasiones, esta web utiliza "Cookies", es decir, pequeños ficheros de datos que se generan en el ordenador del Miembro y que permiten obtener cierta información. Los cookies se utilizan con la finalidad de mejorar el servicio prestado por el Sitio Web pero no almacenan ningún tipo de información personal relativa a los Miembros, la información obtenida es anónima. El Miembro-cliente tiene la opción de impedir la generación de cookies, mediante la selección de la correspondiente opción en su programa navegador. Sin embargo, dealhunter no se responsabiliza de que la desactivación de las mismas impida el buen funcionamiento de la página web. Asimismo, es posible que encuentres publicidad de otras compañías en nuestra web. Estas compañías podrían usar “cookies”y “web beacons” para recoger información no personal sobre las visitas que realices, con la finalidad de enviarte publicidad. Si selecciona algún anuncio publicitario, link o banner mientras se encuentra navegando por nuestra web, puede darse el caso de que seas redireccionado a otro sitio web cuya política de privacidad escape a nuestro control; por esto, es conveniente que también revises la política de privacidad de estos sitios web para averiguar el tratamiento que dan a tus datos personales. Queda prohibida la inclusión de contenidos o prestación de servicios en páginas web de terceros que pudieran suponer un perjuicio para la imagen del Sitio Web o dealhunter, reservándose ésta el derecho a prohibir, limitar, o exigir la cancelación de los enlaces (links) realizados a sus páginas web, cuando así lo estime conveniente, mediante simple comunicación al titular de la página web, sin que bajo ningún concepto esté obligado a abonar ningún tipo de compensación por dicho motivo.
+      </p>
+    </li>
+    <li>
+      <h5>Término de la relación contractual</h5>
+      <p>Estas condiciones son efectivas y vinculan a las partes mientras se encuentren vigentes. En caso de que el Miembro no esté conforme con las mismas, y desee finalizar la presente relación contractual con dealhunter, éste deberá abandonar la conexión con la presente web y no contratar lo contenidos, productos y servicios que aquí se ofrecen. Además, para rescindir las presentes condiciones de forma efectiva, el Miembro deberá eliminar y/o destruir los contenidos, programas y aplicaciones informáticas, copias e instalaciones de cualquier documentación, así como toda la documentación relacionada u obtenida a través de la esta página web, al margen de que estas actividades las haya llevado a cabo bajo las presentes condiciones. En caso de que detectemos que un Miembro infringe los derechos en general y/o los derechos derivados de la propiedad intelectual o industrial de ésta página web o de cualquiera de sus contenidos, dealhunter podrá rescindir inmediatamente estas condiciones con respecto al infractor, comunicárselo al legítimo titular de los derechos y/o iniciar las oportunas acciones judiciales contra el presunto infractor.
+      </p>
+    </li>
+    <li>
+      <h5>Modificaciones y actualizaciones</h5>
+      <p> Debido a la importancia que dealhunter le da a la protección y seguridad de sus Miembros, los TCG, la Política de Privacidad y/o las Condiciones Particulares podrán ser modificadas en cualquier momento, a fin de mantenerlas completamente actualizadas, notificándolo con la debida antelación. En todo caso, los términos generales de uso aquí contenidos tienen carácter obligatorio y vinculante; cualquier persona que no acepte estos términos deberá abstenerse de utilizar el portal y/o los servicios del Sitio Web. Estos TCG no crean ningún contrato de sociedad, de mandato, de franquicia, o relación laboral entre dealhunter y los Miembros. dealhunter se reserva el derecho de rechazar cualquier solicitud de registro o de cancelar un registro previamente aceptado, sin que esté obligado a comunicar o exponer las razones de su decisión y sin que ello genere algún derecho a indemnización o resarcimiento.
+      </p>
+    </li>
+    <li>
+      <h5>Nulidad e ineficacia de las cláusulas</h5>
+      <p> Si cualquier cláusula incluida en los presentes TCG fuese declarada, total o parcialmente, nula o ineficaz, tal nulidad o ineficacia afectará tan sólo a dicha disposición o a la parte de la misma que resulte nula o ineficaz, subsistiendo los TCG en todo lo demás, teniéndose tal disposición, o la parte de la misma que resultase afectada, por no puesta.
+      </p>
+    </li>
+    <li>
+      <h5>Prohibiciones</h5>
+      <p> Los Miembros del Sitio Web no podrán:</p>
+      <ol type="a">
+        <li>
+          <p>Estar registrados sin antes haber aceptado TCG.</p>
+        </li>
+        <li>
+          <p>Estar registrados con más de una contraseña o correo electrónico.</p>
+        </li>
+        <li>
+          <p>Confirmar una orden de compra cuando no se tenga la certeza de que van a realizar en realidad la compra, por medio de la cancelación correspondiente; esta acción interrumpe el buen funcionamiento del Sitio y va en detrimento de los beneficios para los demás Miembros del Sitio. </p>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <h5>Legislación y jurisdicción aplicable </h5>
+      <p>Para cualquier cuestión o divergencia que pudiera surgir sobre dichos contenidos, actividades, productos y servicios contratados, dealhunter y el Miembro, con renuncia expresa a cualquier otro fuero que pudiera corresponderles, se someten expresamente a la aplicación de la Legislación Argentina, siendo competentes los Tribunales ordinarios de la Ciudad Autónoma de Buenos Aires. </p>
+    </li>
+    </ol>
+    </article>
+
+    <hr>
+
+    </div><!--end wrapper-->
+    </div><!--end wrapper-padding-->
+    </section><!--end main content-->
+    </div><!--end container-->
+    </div><!--end row-->
+
+
+    <!--footer-->
+    <footer id="footer-wrapper">
+      <div class="container" >
+        <div class="row" id="footer-top">
+          <div class="span6 hidden-phone"><img id="footer-top-img" src="/assets/logo-footer.png"></div>
+          <div class="span6">
+            <ul id="custumer-support" class="pull-right">
+              <li class="custumer-support-title">Atención al Cliente</li>
+              <li class="telephone-number">0800-111-DEAL(3315)</li>
+              <li class="contact-mail"><a href="<%= pages_contact_path %>"><i class="icon-contact-mail"></i> info@dealhunter.com</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <hr>
+
+        <div id="footer-middle" class="row">
+          <div class="span7">
+            <nav>
+              <ul class="inline">
+                <li><a href="/pages/we">Quiénes Somos</a></li>
+                <li><a href="/pages/work_with_us">Trabajá con Nosotros</a></li>
+                <li><a href="/pages/terms_and_conds">Términos y Condiciones</a></li>
+                <li><a href="/pages/faqs">Ayuda</a></li>
+                <li><a href="/pages/form_contact">Contacto</a></li>
+              </ul>
+            </nav>
+            <p class="copyright">Copyright © 2013 dealhunter.com. Todos los derechos reservados</p>
+          </div>
+
+          <div class="span5">
+            <ul class="inline pull-right social">
+              <li><a href="http://www.facebook.com/dealhunterargentina" target="_blank"><img src="/assets/icon-fb.png"></a></li>
+              <li><a href="https://twitter.com/dealhunterArg" target="_blank"><img src="/assets/icon-twitter.png"></a></li>
+              <li><a href="https://plus.google.com/116522684361738618061" target="_blank"><img src="/assets/icon-gPlus.png"></a></li>
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+
+
+    </footer><!--end footer-->
+
+
+
+<% else %>
+
+
+    <div class="container" id="main-content" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+         xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+    <section class="span11">
+    <header class="out">
+      <h2>TERMINOS Y CONDICIONES</h2>
+    </header>
+
+    <div class="wrapper-padding">
+
+    <div class="wrapper">
+    <article>
+    <p>La utilización de los servicios o la contratación de productos en http://www.dealhunter.com.ar suponen la aceptación de los siguientes Términos y Condiciones Generales de Uso:</p>
+
+    <hr>
+    <h5>GENERAL</h5>
+    <p> www.dealhunter.com es un sitio de internet de titularidad de GRUPO ESTEPA S.R.L, con domicilio en la calle Av. Coronel Díaz 2680, planta baja 4, Capital Federal, Buenos Aires, Argentina.
+    <p>Grupo Estepa S.R.L es responsable y opera bajo los siguientes nombres de denominación: dealhunter Argentina.   </p>
+    <p>Todos los términos contenidos en este documento conjuntamente con las Condiciones Generales del Contrato de Servicios Turísticos, el detalle de los servicios a prestar, los billetes del transporte, las órdenes de servicios (reservas), las facturas emitidas y todo otro documento que contenga especificaciones sobre el viaje, conformarán el contrato de viaje.</p>
+
+
+    <ol>
+
+    <h5>Términos y Condiciones generales</h5>
+    <p>www.dealhunter.com es un sitio de internet de titularidad de GRUPO ESTEPA S.R.L, con domicilio en la calle Av. Coronel Díaz 2680, planta baja 4, Capital Federal, Buenos Aires, Argentina. </p>
+    <p>Grupo Estepa S.R.L es responsable y opera bajo los siguientes nombres de denominación: dealhunter Argentina. </p>
+    <p>Todos los términos contenidos en este documento conjuntamente con las Condiciones Generales del Contrato de Servicios Turísticos, el detalle de los servicios a prestar, los billetes del transporte, las órdenes de servicios (reservas), las facturas emitidas y todo otro documento que contenga especificaciones sobre el viaje, conformarán el contrato de viaje.</p>
+    <li>
+      <h5>Descripción del sitio y del servicio </h5>
+      <p>El Sitio Web consiste en una plataforma de compra, que permite a sus Miembros, durante un período de tiempo, acceder a un producto, prestación y/o servicio ofrecido por otras empresas (en adelante los “Proveedores”) a un precio especial, el cual se tornará aplicable siempre que se cumplan las condiciones estipuladas para cada uno de los productos, prestaciones y/o servicios ofrecidos. Los Proveedores son quienes ofrecen sus productos, prestaciones y/o servicios a través de reservas en el Sito Web y son los Proveedores los emisores de las reservas. Las prestaciones, productos o servicios indicados en las reservas son responsabilidad exclusiva de los Proveedores indicados en la oferta y estarán sujetos a sus respectivos términos y condiciones, los cuales estarán indicados en el Sitio Web o señaladas en el mismo a través de un link. dealhunter no adeuda las prestaciones, servicios o productos previamente representados por las reservas adquiridos por los Miembros. Cada oferta indicará los parámetros, detalles y condiciones específicas de los servicios, prestaciones y/o productos promocionados y de la forma de uso de la reserva, estos términos y condiciones no estarán determinados por dealhunter, sino que en cada caso los términos y condiciones de uso de las reservas y de los servicios y/o prestaciones y/o entrega de productos quedan establecidos por los Proveedores. Las ofertas son vigentes en el territorio de la República Argentina (en adelante el “Territorio”). Las descripciones de los servicios, prestaciones y/o productos promocionados en el Sitio Web, se realizan en base a la información proporcionada por los Proveedores. Las fotografías, imágenes y/o videos relativos a los servicios, prestaciones y/o productos son ilustrativos.</p>
+      <ol type="a">
+        <li>
+          <b> Registro de Miembros</b>
+          <p>Para poder acceder a Sitio Web y a los Servicios que se promocionan a través del Sitio Web es necesario aplicar a la membresía al ingresar al Sitio web haciendo click en el botón ”Inscribite” y completando todos los datos requeridos de la forma que se establece en dicho apartado, a fin de que podamos enviarle las promociones, ofertas y descuentos publicados. A los efectos de que sea activada su solicitud de registración le será remitido a su casilla un e-mail solicitando la confirmación del registro. Cuando el Miembro haya confirmado que desea registrarse, dealhunter le remitirá un correo electrónico confirmando su registro. Recuerde que, en cualquier momento, podrá acceder a los datos que nos ha facilitado, modificarlos o cancelarlos a través del sitio web o bien enviándonos un e-mail a info@dealhunter.com. Los datos de “e-mail” y “contraseña” son personales e intransferibles y, por tanto, el Miembro se obliga a no comunicarlos a ningún tercero ni ceder su uso. En caso de que dealhunter detecte un uso fraudulento del “e-mail” y “contraseña”, se reserva el derecho a cancelar el acceso a sus Servicios. A los efectos de hacerse Miembro, es obligatorio completar el formulario en todos sus campos para poder utilizar los Servicios que ofrece el Sitio Web. La información o datos personales registrados en cada uno de los campos del formulario deben ser exactos, precisos y verdaderos, Adicionalmente, el Miembro asume el compromiso de mantener actualizada su información en “MI CUENTA”. dealhunter no se responsabiliza por la veracidad de la información entregada por los Miembros. Los Miembros garantizan y responden, en cualquier caso, por la veracidad, exactitud, vigencia y autenticidad de los datos personales ingresados. Una vez que el Miembro se haya registrado, accederá a “MI CUENTA” mediante el ingreso de su E-mail y Contraseña. La Cuenta es personal, única e intransferible, y está prohibido que un mismo Miembro registre o posea más de una cuenta. En caso que dealhunter detecte distintas cuentas que contengan datos coincidentes o relacionados a un mismo Miembro, podrá inhabilitar todas o algunas de éstas. El Miembro será responsable por todas las operaciones efectuadas en “MI CUENTA”, ya que el acceso a la misma está restringido con el uso de su E-mail y Contraseña, de conocimiento exclusivo del Miembro. El Miembro se compromete a notificar a dealhunter en forma inmediata, enviándonos un e-mail a info@dealhunter.com, cualquier uso no autorizado de “MI CUENTA”, así como el ingreso por terceros no autorizados a la misma. Se aclara que está prohibida la venta, cesión o transferencia de la Cuenta bajo ningún título. dealhunter se reserva el derecho de suspender temporal o definitivamente o de rechazar cualquier solicitud de registro o de cancelar un registro previamente aceptado, sin que esté obligado a comunicar o exponer las razones de su decisión y sin que ello genere algún derecho a indemnización o resarcimiento.
+          </p>
+        </li>
+        <li>
+          <b>Ofertas de la semana</b>
+          <p>Cada semana habrá ofertas nuevas que tendrán una duración de entre 5 y 7 días. Para acceder a la oferta deseada de la semana solo tenés que hacer click en el botón “Ver Oferta” que aparece junto a la oferta y comprar la “Estadia” realizando los pasos necesarios para tal efecto. Al finalizar el proceso de compra, recibirás un e-mail con la confirmación y un número de reserva el cual se utilizar para informarle a nuestro proveedor a la hora de utilizar el servicio. También podrá ser solicitado para la identificación de su compra en nuestro sistema de atención al cliente. El mail de confirmación contiene información de cuál es la fecha caducidad, que suele ser en torno a los 6 meses.
+          </p>
+        </li>
+        <li>
+          <b>Publica con nosotros</b>
+          <p>dealhunter realiza cada semana una campaña de email a sus Miembros con una oferta imbatible para disfrutar de un producto o servicio de uno de nuestros comercios asociados. El modelo de campaña de marketing que expira semanalmente genera un gran número de ventas en un corto espacio de tiempo (1 semana). Los seguidores de dealhunter remiten y recomiendan la oferta a sus amigos a través de las redes sociales, generando un gran volumen de ventas y una gran notoriedad para nuestros comercios asociados. Para conocer las mejores ofertas de productos y servicios que puedan interesar a los Miembros-clientes de dealhunter podés contactarnos llenando el formulario de “Contactanos”.
+          </p>
+        </li>
+        <li>
+          <b>Recomendá dealhunter</b>
+          <p> A través de nuestra opción de Invita un amigo, el Miembro tendrá la posibilidad de obtener $30 invitando a un amigo a hacerse miembro de dealhunter. Ganarás un crédito de $30 por cada amigo que se registre cuando éste realice su primera compra. Por eso, podés comprobar en todo momento la evolución de tus amigos invitados antes de esa fecha, registrándote y accediendo a tu cuenta. El crédito disponible lo podés aplicar siempre que se cumplan las condiciones específicas del apartado "Crédito Disponible".
+          </p>
+        </li>
+        <li>
+          <b>Crédito Disponible</b>
+          <p>Podés acumular crédito en tu cuenta dealhunter de las siguientes maneras: - El Crédito dealhunter: Lo conseguís cuando invitas a un amigo a hacerse miembro y el mismo realiza una compra, o por compensaciones. Condiciones de uso: Son de un solo uso, tienen una caducidad inferior a 30 días y se pueden utilizar en compras superiores al cuádruple del valor del crédito utilizado salvo en promociones específicas. - Crédito de Gift Card: Lo conseguís cuando dealhunter te regala una de sus Gift Cards. Condiciones de uso: podés utilizarlas en más de una compra hasta que gastes todo el crédito, no requiere un importe mínimo de compra, y tendrá una caducidad que se ajustará a las condiciones particulares de esa oferta. - Crédito por Devoluciones: Con una devolución de compra, se suma a tu cuenta el importe de la compra o de la oferta que devolviste. Condiciones de uso: siempre que la devolución no contenga como origen de compra otro crédito (es decir, “Crédito dealhunter”, “Crédito de GiftCard”) podés utilizar el crédito devolución en más de una compra hasta que gastes todo el crédito, no requiere un importe mínimo de compra y tienen caducidad de 1 año. En caso contrario, deberás consultar las condiciones específicas del crédito utilizado anteriormente que aparecen indicadas en este apartado.</p>
+          <p>Para realizar cada compra sólo tenés que elegir utilizar el crédito disponible a la hora de realizar la compra. Sin perjuicio de lo anterior, pueden existir algunas ofertas cuyo pago no podrá ser efectuado con crédito. En caso de que exista dicha restricción, se indicará claramente en la descripción de la oferta.
+          </p>
+        </li>
+        <li>
+          <b>Concursos</b>
+          <p>dealhunter, puede realizar concursos en su sitio. La participación en estos concursos es completamente voluntaria. Los datos solicitados pueden incluir información personal identificable. Al participar, acepta todos los términos y condiciones, que se especificarán claramente en las normas.
+          </p>
+        </li>
+      </ol>
+
+    </li>
+    <li>
+      <h5>Condiciones de uso y su aceptación  </h5>
+      <p>Este documento describe los términos y condiciones generales (en adelante los “TCG”) aplicables al acceso y uso de los servicios ofrecidos por GRUPO ESTEPA S.R.L (en adelante “dealhunter”) mediante su sitio www.dealhunter.com.ar. Toda persona que desee acceder y usar el sitio web o los servicios promocionados y/o publicitados por dealhunter mediante su sitio web (en adelante los “Servicios”), podrá hacerlo, registrándose y sujetándose a los TCG aplicables, junto con todas las demás políticas y principios que rigen el Sitio Web y que son incorporados al presente (en adelante el/los “Miembro/s”). Estos TCG tienen carácter obligatorio y vinculante, por lo tanto toda persona que no los acepte, no podrá ingresar ni utilizar el sitio web y/o los Servicios. En el proceso de registración el Miembro deberá indicar si acepta nuestros Términos y Condiciones y nuestra Política de Privacidad. Por favor, lea detenidamente estos apartados, puesto que contienen información relevante sobre sus derechos, sobre la forma en que tratamos y obtenemos sus datos personales, así como las normas que regulan y vinculan la relación entre dealhunter y el Miembro. El uso del sitio web implica la aceptación sin reservas por parte del Miembro de los TCG y de todo otro documento al que se haga referencia en el presente. dealhunter se reserva el derecho de modificar unilateralmente los TCG, los que serán obligatorios desde su publicación en el Sitio Web o desde su notificación al Miembro, lo que suceda primero. Mediante la aceptación de los presentes TCG, el Miembro declara que es una persona mayor de edad y con capacidad legal para contratar, conforme a las leyes generales de la República Argentina. No podrán adquirir los Servicios que se brindan a través del sitio web las personas que no tengan la capacidad legal para contratar y los menores de edad. Los actos que éstos realicen en el sitio web serán responsabilidad de sus padres, tutores, encargados o curadores, y por tanto se considerarán realizados por éstos en ejercicio de la representación legal con la que cuentan. El Miembro tendrá acceso a la información sobre productos y servicios turísticos ofertados en el sitio web de dealhunter los proveedores mayoristas de los citados servicios y, además, podrá realizar compras de paquetes turísticos y servicios de aquellos proveedores u organizadores de viajes combinados que elija, quedando sujeto a los términos y condiciones específicos que tales proveedores u organizadores de viajes combinados establezcan para cada caso. En este sentido las ofertas e información de productos turísticos que figuran en el sitio web de dealhunter proceden, son elaboradas y mantenidas, por los terceros proveedores de servicios turísticos y nunca pueden ser consideradas como ofertas directas de dealhunter a los Miembros de la sitio web. En consecuencia dealhunter, no se hace responsable de la legalidad y de la redacción conforme a derecho de las condiciones de contratación introducidas por los proveedores de viajes. A continuación se enumeran las condiciones generales del contrato de viaje combinado estándar que el Miembro acepta explícitamente al hacer una reserva en dealhunter. En caso de que algún viaje incluya condiciones especiales de contratación no incluidas en las condiciones generales, estas serán remitidas por correo electrónico al Miembro registrado a fin que tenga constancia y las acepte activamente al contratar su viaje. El sitio web de dealhunter constituye un sitio destinado a la promoción, difusión y comercialización de servicios de múltiples operadores turísticos. La actividad de la Sociedad es la prestación de servicios de promoción y cobranza, facilitando la conexión entre el Miembro del sitio y el proveedor del servicio. dealhunter en ningún caso es el proveedor del servicios, no brinda ni presta por si misma tales productos o servicios, resultando intermediario entre el Miembro y el proveedor del servicio. El Miembro reconoce y acepta que dealhunter no es responsable en relación a las contingencias propias de la relación que el Miembro pueda entablar con el proveedor del producto o servicio.</p>
+    </li>
+    <li>
+      <h5>Operatoria del la reserva y pago de los servicios</h5>
+      <p>El miembro que compra una oferta, realiza una reserva. Dado el carácter de la oferta, en el momento de compra dealhunter reclamará al consumidor la totalidad del precio de la oferta solicitada. De no realizarse el pago correspondiente, la reserva no será tomada Cesión de la reserva El Miembro tiene la facultad de desistir del viaje contratado en cualquier momento antes de la salida. No obstante, si este desistimiento se produce dentro de los 30 días anteriores a la salida del viaje, deberá abonar una penalización en función del tiempo que falte para la salida, que será de:</p>
+      <ol type="a">
+        <li>
+          <p>El 30% del precio del viaje si se produce con una antelación entre los 30 y 15 días antes de la salida.</p>
+        </li>
+        <li>
+          <p>El  55% del precio del viaje, si se produce con una antelación entre los 15 y 10 días antes de la salida.</p>
+        </li>
+        <li>
+          <p>El  75% del precio del viaje, si se produce con una antelación entre los 10 y 7 días de la salida.</p>
+        </li>
+        <li>
+          <p>El 100% del precio del viaje, si se produce con una antelación de 7 días de la salida.</p>
+        </li>
+      </ol>
+      <p>El Miembro no tendrá que abonar porcentaje alguno en concepto de penalización si el desistimiento tiene lugar por causa de fuerza mayor. A estos efectos, se considerará causa de fuerza mayor la muerte, el accidente o enfermedad graves del consumidor o de alguna de las personas con quien conviva o cualquier supuesto análogo que le impida participar en el viaje. En todos los casos, el Miembro deberá abonar los gastos de gestión [PESOS ARGENTINOS CINCUENTA ($50) por persona y anulación que produzca el desistimiento. El desistimiento produce efectos desde el momento en que la voluntad de desistir del Miembro llega al conocimiento de dealhunter. Conocido el desistimiento, dealhunter devolverá al Miembro las cantidades que hubiese abonado en el plazo máximo de un mes, deducidos los gastos de gestión y, en su caso, los gastos de anulación justificados y las penalizaciones. Si el viaje estuviera sujeto a condiciones económicas especiales de contratación, tales como flete de aviones, buques, tarifas especiales u otros análogos, los gastos de gestión, los gastos de anulación y las penalizaciones serán los que indique de modo explícito el folleto para ese viaje. Con carácter general, una vez emitido físicamente un billete aéreo, sus gastos de anulación alcanzan el 100% de su importe. Las tarifas especiales de avión y plazas en vuelos "chárter" o "especiales" conllevan, igualmente, unos gastos de anulación que alcanzan el 100% de su importe. Falta de presentación a la salida Existirá falta de presentación a la salida si el Miembro no comunica su voluntad de no llevar a cabo el viaje y no se presenta en el tiempo y lugar previstos para la salida. En este caso, pierde el derecho a la devolución de las cantidades entregadas y continúa obligado a abonar las que estuvieran pendientes de pago. No obstante, si la falta de presentación tiene lugar por causa de fuerza mayor, el consumidor tendrá derecho a que se le devuelvan las cantidades entregadas, deducidos los gastos de gestión y los gastos de anulación. A estos efectos, se considerará causa de fuerza mayor la muerte, el accidente o enfermedad graves del consumidor o de alguna de las personas con quien conviva o cualquier supuesto análogo que le impida participar en el viaje y comunicar a la agencia esa imposibilidad antes de la salida. Desistimiento del Miembro durante el viaje El consumidor tiene el derecho a desistir del contrato de viaje combinado una vez comenzado el viaje, pero no podrá reclamar la devolución de las cantidades entregadas y continuará obligado a abonar las que estén pendientes de pago. Medios de pago El importe de los servicios turísticos que se contrataren a través de la WEB de dealhunter, podrá ser cancelado mediante diferentes alternativas de pago instantáneo brindadas por Mercado Pago. Moneda de pago Todos los pagos debidos en virtud de los servicios contratados deberán de efectuarse en el monto equivalente en moneda de curso legal en la República, al día del efectivo pago. Facturación El servicio será facturado por el tercero proveedor, distinto de la Sociedad. Siendo exclusiva responsabilidad del Miembro la obtención de la misma.</p>
+    </li>
+    <li>
+      <h5>Condiciones generales del contrato de servicios turísticos </h5>
+      <p>Sin perjuicio de toda otra disposición incluida en el presente texto, la Sociedad pone en conocimiento de los Miembros que en virtud de la Resolución Nº 256/2000, del Ministerio de Turismo de la Nación, la contratación de servicios turísticos se ajustara a las siguientes condiciones:</p>
+      <ol type="a">
+        <li>
+          <b> Solicitudes y pagos</b>
+          <ol>
+            <li>
+              <p>El precio y/o reservación de los servicios que componen el tour quedan sujetos a modificaciones sin previo aviso cuando se produzca una alteración en los servicios, modificaciones en los costos o en los tipos de cambio previstos, por causas no imputables a las partes.</p>
+            </li>
+            <li>
+              <p>Todos los importes pagados antes de la confirmación definitiva de los servicios son percibidos en concepto de reserva. La confirmación definitiva de los servicios y precios respectivos se producirá con la emisión de pasajes y/u órdenes de servicios y la facturación correspondiente.</p>
+            </li>
+            <li>
+              <p>Las operaciones a crédito deberán satisfacer los requisitos propios fijados para las mismas. En su defecto el interesado deberá cumplimentar el pago de los saldos en los plazos y condiciones establecidos en la contratación.</p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <b>Los precios incluyen</b>
+          <p>Alojamiento en los hoteles mencionados en los itinerarios u otros de igual o mayor categoría, ocupando habitaciones simples, dobles, triples, etc. Según tarifa elegida, con baño privado e impuestos. Régimen de comidas según se indique en cada oportunidad. Visitas y excursiones que se mencionen. Traslados hasta y desde aeropuertos, terminales y hoteles, cuando se indique. La cantidad prevista de días de alojamiento teniendo en cuenta que el día de alojamiento hotelero se computa desde las quince horas y finaliza a las doce horas del día siguiente, independientemente de la hora de llegada y de salida y de la utilización completa o fraccionada del mismo. La duración del tour será indicada en cada caso tomando como primer día, el de salida y como último incluido el día de salida del destino, independientemente del horario de salida o de llegada en el primer día o en el último.</p>
+        </li>
+        <li>
+          <b>Servicios o rubros no incluidos</b>
+          <ol>
+            <li>
+              <p>Extras, bebidas, lavado de ropa, propinas, tasas de embarque, tasas sobre servicios, IVA y otros impuestos, actuales y/o futuros, ni ningún servicio que no se encuentre expresamente indicado en la orden de servicio emitida por el agente de viajes.</p>
+            </li>
+            <li>
+              <p>Estadias, comidas y/o gastos adicionales o perjuicios producidos por cancelaciones, demoras en las salidas o llegadas de los medios de transporte, o por razones imprevistas ajenas a la empresa. </p>
+            </li>
+            <li>
+              <p>Alimentación en ruta, excepto aquellas que estuviesen expresamente incluidas en los programas.</p>
+            </li>
+            <li>
+              <p>Los gastos e intereses en las operaciones a crédito. </p>
+            </li>
+          </ol>
+        <li>
+          <b>Limitaciones al derecho de permanencia</b>
+          <p>La empresa se reserva el derecho de hacer que abandone el tour en cualquier punto del mismo todo pasajero cuya conducta, modo de obrar, estado de salud u otras razones graves a juicio de la empresa provoque peligro o cause molestias a los restantes viajeros o pueda malograr el éxito de la excursión o el normal desarrollo de la misma.
+          </p>
+        </li>
+        <li>
+          <b>Documentación</b>
+          <p>Para los viajes al exterior es necesario atender la legislación vigente en cada caso. Es responsabilidad inexcusable de la agencia informar fehacientemente y con anticipación suficiente sobre los requisitos que exigen las autoridades migratorias, aduaneras y sanitarias de los destinos que incluye el tour, siendo responsabilidad exclusiva del pasajero contar con la documentación personal que exijan las autoridades mencionadas anteriormente en debida forma.
+          </p>
+        </li>
+        <li>
+          <b>Cancelaciones</b>
+          <ol>
+            <li>
+              <p>En caso de desistimiento de operaciones a crédito no tendrán reembolso los importes abonados en concepto de informe, gastos administrativos, sellados e intereses.</p>
+            </li>
+            <li>
+              <p>Cuando se trate de desistimiento que afecte a servicios contratados en firme por la agencia, el reembolso de los mismos estará sujeto a las condiciones contractuales bajo las cuales presten sus servicios las empresas respectivas. En todos los casos de reintegros, la agencia podrá retener el precio de los gastos incurridos más la comisión del diez por ciento de los servicios contratados con terceros.</p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <b>Transporte no regular o charter</b>
+          <p>Rige lo estipulado en el punto anterior. Sin perjuicio de ello, en estos casos sólo se reintegrará la proporción del precio correspondiente a los servicios terrestres (hotelería, pensión, excursiones) que determine el organizador según la modalidad con que operen los prestadores de los servicios. Para que ésta cláusula sea válida deberá determinarse en el primer documento entregado al pasajero la calidad del transporte.</p>
+        </li>
+        <li>
+          <b>Cesión y transferencia</b>
+          <p>El derecho que confiere al cliente el contrato de servicios turísticos, podrá ser cedido o transferido a otras personas hasta 30 días antes de la fecha de salida, siempre que no se opongan a ello las prescripciones del transportista, del hotelero o prestador de los servicios. En los supuestos que los pasajeros sean de distintas edades (mayores-menores), se ajustará el precio según tarifarios. En todos los casos de cesión o transferencia, la empresa podrá percibir el sobreprecio del 10% del monto convenido.
+          </p>
+        </li>
+        <li>
+          <b>Responsabilidad</b>
+          <p>La empresa declara expresamente que actúa en el carácter de intermediaria en la reserva o contratación de los distintos servicios vinculados e incluidos en el respectivo tour o reservación de servicios: hoteles, restaurantes, medios de transportes u otros prestadores. No obstante ello las responsabilidades de la empresa, sea que intervenga como organizadora o intermediaria de viaje será determinada conforme las disposiciones. La empresa no se responsabiliza por los hechos que se produzcan por actos de terrorismo, caso fortuito o fuerza mayor, fenómenos climáticos o hechos de la naturaleza que acontezcan antes o durante el desarrollo del tour que impidan, demoren o de cualquier modo obstaculicen la ejecución total o parcial de las prestaciones comprometidas por la empresa, de conformidad con lo dispuesto por el Código Civil.
+          </p>
+        </li>
+        <li>
+          <b>Alteraciones o modificaciones</b>
+          <ol>
+            <li>
+              <p>La empresa se reserva el derecho, por razones técnicas u operativas, de alterar total o parcialmente el ordenamiento diario y/o de servicios que componen el tour, antes o durante la ejecución del mismo.
+              </p>
+            </li>
+            <li>
+              <p>Salvo condición expresa en contrario, los hoteles estipulados podrán ser cambiados por otro de igual o mayor categoría dentro del mismo núcleo urbano sin cargo alguno para el pasajero. Respecto de estas variaciones el pasajero no tendrá derecho a indemnización alguna.
+              </p>
+            </li>
+            <li>
+              <p>La empresa podrá anular cualquier tour cuando se configure alguna de las circunstancias previstas en el art. 24 del Decreto N° 2182/72.
+              </p>
+            </li>
+            <li>
+              <p>Una vez comenzado el viaje, la suspensión, modificación o interrupción de los servicios por parte del pasajero por razones personales de cualquier índole, no dará lugar a reclamo alguno, reembolso o devolución alguna.
+              </p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <b>Cláusula de arbitraje </b>
+          <p>Toda cuestión que surja con motivo de la celebración, cumplimiento, incumplimiento, prórroga o rescisión del presente contrato, podrá ser sometida por las partes a la resolución del Tribunal Arbitral de la Asociación Argentina de Agencias de Viajes y Turismo y/o de los Tribunales Arbitrales que funcionen en sus Regionales. En caso de sometimiento de dicha jurisdicción, los contratantes se sujetan y dan por aceptadas todas las condiciones establecidas por la Reglamentación del Tribunal Arbitral.
+          </p>
+        </li>
+        <li>
+          <b>Normas de aplicación</b>
+          <p>El presente contrato y en su caso la prestación de los servicios, se regirá exclusivamente por estas condiciones generales, por la Ley N° 18.829 y su reglamentación. Las presentes condiciones generales junto con la restante documentación que se entregue a los pasajeros conforman el Contrato de Viaje.
+          </p>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <h5> Forma de pago y seguridad</h5>
+      <p> Los precios indicados en el Sitio Web son en pesos argentinos e incluyen IVA y los demás impuestos que pudiera corresponder a menos que se indique lo contrario. La forma de pago se efectuará a través de MERCADOPAGO (Visa, Mastercard, American Express y otras tarjetas análogas autorizadas en el Sitio Web) excluyendo los medios de pago no instantáneos como Rapipago, Pago fácil, etc y se cargará en la cuenta bancaria del Miembro siempre y cuando se hayan configurado los requisitos indicados en cada oferta. El Miembro proporcionará los datos de su tarjeta de crédito, la fecha de caducidad, los tres (3) dígitos de seguridad, en el momento que realiza el pedido y/o aceptación de la compra de la oferta del servicio y/o producto en cuestión. El Sitio Web no se hace cargo de las gestiones bancarias que el Miembro deba realizar para que éste se encuentre habilitado para efectuar compras por internet. Nuestro servidor utiliza tecnología de encriptación SSL y toda la operación de cobro se realiza a través de la plataforma de cobro segura de la entidad bancaria y/o crediticia asociada. La tecnología de encriptación SSL (Secure Socket Layer) permite que se transmitan en forma segura todos los datos personales solicitados en una transacción, como el nombre, la dirección o el número de tarjeta de crédito. La encriptación es la codificación de datos de tal forma que sólo los involucrados en una transacción puedan interpretarlos. La encriptación evita que individuos ajenos intercepten las transacciones y puedan conocer su contenido. En caso de haberse facturado cargos que no hubiesen correspondido, el Miembro deberá comunicarse inmediatamente con dealhunter a través de la dirección de correo info@dealhunter.com, para resolver dicha cuestión.  Algunos países y Comunidades Autónomas obligan a los hoteles a cobrar algún tipo de tasas turísticas o de estancia. Estas tasas no están incluidas en el precio y deberán ser abonadas por el Miembro. Debiendo el Miembro observar y cumplimentar con los recaudos específicos para la oferta que particularmente éste adquirida.
+      </p>
+    </li>
+    <li>
+      <h5>Cancelaciones</h5>
+      <p>El Miembro que quiera proceder a la devolución de su reserva, deberá notificarlo mediante el envío de un mail a dealhunter: info@dealhunter.com, describiendo las razones que motivan dicho arrepentimiento y previo cumplimiento de algunas formalidades administrativas, le será devuelto como crédito en su cuenta de dealhunter estando disponible el monto para su uso en futuras compras el importe que hubiera abonado.
+      </p>
+    </li>
+    <li>
+      <h5>Derechos y obligaciones del Miembro-cliente</h5>
+      <p> El Miembro se obliga, siendo único responsable, a utilizar los contenidos, productos y servicios ofrecidos por el Sitio Web, de acuerdo con la ley, los presentes TCG, las Políticas de Privacidad y las Condiciones Particulares en su caso y sus actualizaciones, según las normas de la buena fe, la moral y el orden público generalmente aceptadas. El Miembro no tendrá derecho alguno de reclamar indemnización de ningún tipo (directa o indirecta) por las interrupciones temporales o suspensión definitiva del Sitio web o de algún tipo de contenido, producto o servicio ofrecido en el mismo.
+      </p>
+    </li>
+    <li>
+      <h5> Devoluciones</h5>
+      <p>El titular de la reserva tendrá derecho a que dealhunter le reintegre el importe abonado como crédito disponible para futuras compras dentro de la plataforma de dealhunter según los siguientes plazos:
+      <ol type="a">
+        <li>
+          <p>La totalidad del precio si se produce con una antelación de mas de 30 días de la salida.
+          </p>
+        </li>
+        <li>
+          <p> El 70% del precio del viaje si se produce con una antelación entre los 30 y 15 días de la salida.
+          </p>
+        </li>
+        <li>
+          <p>El  45% del precio del viaje, si se produce con una antelación entre los 15 y 10 días de la salida.
+          </p>
+        </li>
+        <li>
+          <p>El  25% del precio del viaje, si se produce con una antelación entre los 10 y 7 días de la salida.
+          </p>
+        </li>
+        <li>
+          <p>El 0% del precio del viaje, si se produce con una antelación de 7 días de la salida.
+
+          </p>
+        </li>
+
+      </ol>
+
+      </p>Dicho reintegro de efectivo deberá solicitarse mediante correo electrónico a info@dealhunter.com. Pasado dichos plazo, el titular de la estadía no tendrá derecho al reintegro. Sin perjuicio de lo anterior, en caso de que el titular no utilice su estadía en la fecha reservada, el mismo se considerará caducado, no siendo posible su devolución, reintegro monetario o utilización.
+
+    </li>
+    <li>
+      <h5>Propiedad intelectual e industrial </h5>
+      <p>Los derechos de propiedad intelectual existentes sobre la presente página web y/o los contenidos, gráficos, logotipos, diseños, imágenes y códigos fuente utilizado para su programación y diseños incluidos en la mismas, así como las marcas, nombres comerciales y diseños industriales contenidos en dicha página web, son de titularidad exclusiva de dealhunter, estando protegidos todos ellos por la ley. Asimismo, pertenecen a dealhunter o a su legítimo titular, proveedor de dealhunter, la totalidad de los contenidos audiovisuales, musicales o de otra índole, que se ofrezcan en el presente web, así como cualquier otro contenido y apariencia de la presente web, estando todos ellos protegidos por la normativa nacional e internacional aplicable. Queda prohibida la reproducción, distribución, comunicación pública, transformación y/o puesta a disposición del público de todo o parte de la página web y/o sus contenidos, gráficos, logotipos, diseños, imágenes y códigos fuente utilizado para su programación y diseños, marcas, nombres comerciales y diseños industriales, sin la previa autorización expresa de su legítimo titular. Por la descarga de estos contenidos, productos y/o servicios de esta web, el Miembro no adquiere ningún derecho sobre los mismos, pudiendo simplemente disfrutarlos en su ámbito particular y familiar, conforme a las “CONDICIONES PARTICULARES” establecidas en cada caso. Queda expresamente prohibida cualquier otra utilización, acceso, reproducción, distribución, comunicación pública, transformación, traducción, alquiler, venta, explotación comercial o puesta a disposición de terceras personas de ninguna forma, y especialmente en una red informática o a través de tecnologías de acceso remoto, de todo o de parte de los contenidos, productos y/o servicios incluidos en el Sitio Web. La utilización no autorizada de los contenidos, productos y/o servicios de la presente web así como la lesión a los derechos de propiedad intelectual o industrial de sus contenidos, productos y/o servicios dará lugar a las correspondientes responsabilidades legales. En caso de que el Miembro detecte cualquier actividad susceptible de vulnerar algún derecho de propiedad intelectual, industrial o de cualquier tipo de derecho, le rogamos que nos lo comunique a través del formulario de contacto presente en el sitio web o a través de la dirección de e-mail reservas@dealhunter.com. </p>
+    </li>
+    <li>
+      <h5>Tratamiento de los datos personales </h5>
+      <p>dealhunter garantiza que el tratamiento de los datos personales de los Miembros que se registren en la página web se realizará de conformidad con lo dispuesto en la legislación aplicable en la República Argentina, en especial la ley N° 25.326 (Protección de Datos Personales) y su Decreto Reglamentario y en la Política de Privacidad. Es posible que en el Sitio Web el Miembro encuentre links, enlaces o banners que lo re-direccionen a otra página web. El Miembro debe saber que en este caso, le será de aplicación una política de privacidad distinta a la del Sitio Web, por lo que recomendamos que las lea detenidamente. Además en estas web es posible que se utilicen cookies u otras tecnologías con la finalidad de recabar sus datos. dealhunter no se hace responsable de los contenidos de las web a las que el Miembro pueda ser redireccionado.
+      </p>
+    </li>
+    <li>
+      <h5> Responsabilidad</h5>
+      <p>dealhunter sólo pone a disposición de los Miembros un espacio virtual que permite la relación entre los Miembros y los proveedores de servicios turísticos. dealhunter no es el propietario de los productos y/o servicios ofrecidos, no tiene posesión de ellos. dealhunter no se hace responsable de la existencia, calidad, cantidad, estado, integridad de los bienes, productos o servicios ofrecidos en el sitio web. Cada proveedor conoce y acepta ser el exclusivo responsable por las ofertas de los productos o servicios, debiendo el Miembro dirigirse directamente al proveedor para realizar cualquier reclamo. dealhunter no responde frente al Miembro por incumplimiento de obligaciones del proveedor a la hora de la prestación del servicio o entrega del producto. En caso de que el Miembro tuviere algún problema, deberá notificarlo inmediatamente a dealhunter quien intentará encontrar una solución, a tales efectos, se le solicita remita un e-mail a reservas@dealhunter.com. dealhunter no se responsabiliza del mal uso que se realice de las aplicaciones o de los contenidos de su página web, recayendo únicamente la responsabilidad en aquel Miembro que haya realizado el mal uso. dealhunter declina toda responsabilidad por la información contenida en la página web de terceros a los que se pueda acceder mediante enlaces (links) desde esta página web, o por la información contenida en páginas web de terceros vinculada de algún modo a esta página web. dealhunter no asume responsabilidad alguna por el intercambio de información entre Miembros a través de su página web. La responsabilidad de las manifestaciones difundidas en esta página web corresponde a quienes las realizan. dealhunter no asume responsabilidad alguna por la divulgación, puesta a disposición de terceros y/o descarga de cualquier contenido realizada por los Miembros, correspondiendo dicha responsabilidad a dicho Miembro. dealhunter cooperará, si es requerido por orden judicial o por las autoridades pertinentes, en la identificación de las personas responsables de aquellos usos que violen la ley. dealhunter se reserva el derecho a denegar o retirar el acceso a su página web, en cualquier momento y sin necesidad de preaviso, por iniciativa propia o a instancia de un tercero, a aquellos Miembros que violen la ley o que incumplan las presentes TCG, la Política de Privacidad, o lo dispuesto en las Condiciones Particulares o bien vulneren los derechos existentes sobre los contenidos, productos y/o servicios de la presente web. dealhunter rechaza toda responsabilidad derivada de la mala utilización de los contenidos y de esta página web, reservándose el derecho a actualizarlos, restringirlos o eliminarlos de manera transitoria o definitiva cuando considere oportuno. Asimismo, dealhunter declina toda responsabilidad por cualquier interrupción de la página web que se pudiese producir por la actualización o mejora de la misma o por causas ajenas. Los Miembros mantendrán indemne a dealhunter, sus directivos, administradores, representantes y empleados, por cualquier reclamo o demanda de terceros relacionados con las actividades promovidas dentro del Sitio Web o por el incumplimiento de las presentes TCG, la Política de Privacidad, o lo dispuesto en las Condiciones Particulares y demás normativa que se entienda incorporada al presente o por la violación de cualesquiera leyes o derechos de terceros.
+      </p>
+    </li>
+    <li>
+      <h5>Enlaces (links) y cookies</h5>
+      <p> En algunas ocasiones, esta web utiliza "Cookies", es decir, pequeños ficheros de datos que se generan en el ordenador del Miembro y que permiten obtener cierta información. Los cookies se utilizan con la finalidad de mejorar el servicio prestado por el Sitio Web pero no almacenan ningún tipo de información personal relativa a los Miembros, la información obtenida es anónima. El Miembro-cliente tiene la opción de impedir la generación de cookies, mediante la selección de la correspondiente opción en su programa navegador. Sin embargo, dealhunter no se responsabiliza de que la desactivación de las mismas impida el buen funcionamiento de la página web. Asimismo, es posible que encuentres publicidad de otras compañías en nuestra web. Estas compañías podrían usar “cookies”y “web beacons” para recoger información no personal sobre las visitas que realices, con la finalidad de enviarte publicidad. Si selecciona algún anuncio publicitario, link o banner mientras se encuentra navegando por nuestra web, puede darse el caso de que seas redireccionado a otro sitio web cuya política de privacidad escape a nuestro control; por esto, es conveniente que también revises la política de privacidad de estos sitios web para averiguar el tratamiento que dan a tus datos personales. Queda prohibida la inclusión de contenidos o prestación de servicios en páginas web de terceros que pudieran suponer un perjuicio para la imagen del Sitio Web o dealhunter, reservándose ésta el derecho a prohibir, limitar, o exigir la cancelación de los enlaces (links) realizados a sus páginas web, cuando así lo estime conveniente, mediante simple comunicación al titular de la página web, sin que bajo ningún concepto esté obligado a abonar ningún tipo de compensación por dicho motivo.
+      </p>
+    </li>
+    <li>
+      <h5>Término de la relación contractual</h5>
+      <p>Estas condiciones son efectivas y vinculan a las partes mientras se encuentren vigentes. En caso de que el Miembro no esté conforme con las mismas, y desee finalizar la presente relación contractual con dealhunter, éste deberá abandonar la conexión con la presente web y no contratar lo contenidos, productos y servicios que aquí se ofrecen. Además, para rescindir las presentes condiciones de forma efectiva, el Miembro deberá eliminar y/o destruir los contenidos, programas y aplicaciones informáticas, copias e instalaciones de cualquier documentación, así como toda la documentación relacionada u obtenida a través de la esta página web, al margen de que estas actividades las haya llevado a cabo bajo las presentes condiciones. En caso de que detectemos que un Miembro infringe los derechos en general y/o los derechos derivados de la propiedad intelectual o industrial de ésta página web o de cualquiera de sus contenidos, dealhunter podrá rescindir inmediatamente estas condiciones con respecto al infractor, comunicárselo al legítimo titular de los derechos y/o iniciar las oportunas acciones judiciales contra el presunto infractor.
+      </p>
+    </li>
+    <li>
+      <h5>Modificaciones y actualizaciones</h5>
+      <p> Debido a la importancia que dealhunter le da a la protección y seguridad de sus Miembros, los TCG, la Política de Privacidad y/o las Condiciones Particulares podrán ser modificadas en cualquier momento, a fin de mantenerlas completamente actualizadas, notificándolo con la debida antelación. En todo caso, los términos generales de uso aquí contenidos tienen carácter obligatorio y vinculante; cualquier persona que no acepte estos términos deberá abstenerse de utilizar el portal y/o los servicios del Sitio Web. Estos TCG no crean ningún contrato de sociedad, de mandato, de franquicia, o relación laboral entre dealhunter y los Miembros. dealhunter se reserva el derecho de rechazar cualquier solicitud de registro o de cancelar un registro previamente aceptado, sin que esté obligado a comunicar o exponer las razones de su decisión y sin que ello genere algún derecho a indemnización o resarcimiento.
+      </p>
+    </li>
+    <li>
+      <h5>Nulidad e ineficacia de las cláusulas</h5>
+      <p> Si cualquier cláusula incluida en los presentes TCG fuese declarada, total o parcialmente, nula o ineficaz, tal nulidad o ineficacia afectará tan sólo a dicha disposición o a la parte de la misma que resulte nula o ineficaz, subsistiendo los TCG en todo lo demás, teniéndose tal disposición, o la parte de la misma que resultase afectada, por no puesta.
+      </p>
+    </li>
+    <li>
+      <h5>Prohibiciones</h5>
+      <p> Los Miembros del Sitio Web no podrán:</p>
+      <ol type="a">
+        <li>
+          <p>Estar registrados sin antes haber aceptado TCG.</p>
+        </li>
+        <li>
+          <p>Estar registrados con más de una contraseña o correo electrónico.</p>
+        </li>
+        <li>
+          <p>Confirmar una orden de compra cuando no se tenga la certeza de que van a realizar en realidad la compra, por medio de la cancelación correspondiente; esta acción interrumpe el buen funcionamiento del Sitio y va en detrimento de los beneficios para los demás Miembros del Sitio. </p>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <h5>Legislación y jurisdicción aplicable </h5>
+      <p>Para cualquier cuestión o divergencia que pudiera surgir sobre dichos contenidos, actividades, productos y servicios contratados, dealhunter y el Miembro, con renuncia expresa a cualquier otro fuero que pudiera corresponderles, se someten expresamente a la aplicación de la Legislación Argentina, siendo competentes los Tribunales ordinarios de la Ciudad Autónoma de Buenos Aires. </p>
+    </li>
+    </ol>
+    </article>
+
+    <hr>
+
+    </div><!--end wrapper-->
+    </div><!--end wrapper-padding-->
+    </section><!--end main content-->
+    </div><!--end container-->
+    </div><!--end row-->
+
+<% end %>
+
+
+
+
+

@@ -1,0 +1,2 @@
+module NewsletterFrequenciesHelper
+end

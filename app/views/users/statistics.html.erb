@@ -1,0 +1,83 @@
+<div class="container" id="main-content">
+  <div class="row">
+    <section class="span8 rounded-borders light-shadowed">
+
+
+
+      <header class="out rounded-borders-top">
+        <h2>Mis Estadísticas</h2>
+      </header>
+
+      <div class="wrapper-padding">
+
+        <div class="wrapper">
+          <article>
+
+           <% if @user.company?%>
+                <h5 class="blueTitle">
+                  Total de dinero ganado hasta el momento: $<%=@user.company.earned_money %>
+
+                </h5>
+               <!-- aca van las estadísiticas de la empresa-->
+                <%= render 'users/statistics_company' %>
+           <%else%>
+               <h5 class="blueTitle"> Total de dinero ahorrado hasta el momento: $<%=@user.client.saved_money %>
+               </h5>
+                <h5 class="blueTitle"> Total de dinero que se hubiese pagado hasta el momento: $<%=@user.client.real %>
+                </h5>
+                <h5 class="blueTitle"> Total de dinero que se gastó hasta el momento: $<%=@user.client.spent_money %>
+                </h5>
+                <!-- aca van las estadísiticas del cliente-->
+                <%= render 'users/statistics_client' %>
+
+           <%end%>
+
+
+
+          </article>
+
+        </div>
+        <!--end wrapper-->
+      </div>
+    </section>
+    <!--end main content-->
+
+    <!--sidebar-->
+    <aside class="span4" style="background: none;">
+
+      <div class="wrapper-padding rounded-borders light-shadowed" style="background: #ffffff;">
+
+        <h2 class="rounded-borders-btn">Detalle de Cuenta</h2>
+        <ul class="aside-nav">
+          <% if !current_user.company? %>
+              <li><a href="<%= users_offers_client_user_path %>" class="active">Mis Ofertas</a></li>
+              <li><a href="<%= users_titles_user_path %>">Mis Intereses</a></li>
+          <%else%>
+              <li><a href="<%= users_offers_company_user_path %>" class="active">Mis Ofertas</a></li>
+              <li><a href="<%= users_branches_company_user_path %>">Mis Sucursales</a></li>
+          <%end%>
+
+        </ul>
+        <h2 class="rounded-borders-btn">Información Personal</h2>
+        <ul class="aside-nav">
+          <li><a href="<%= edit_user_path(current_user)%>">Mi Perfil</a></li>
+          <li><a href="<%= users_statistics_path %>">Mis Estadísticas</a></li>
+        </ul>
+        <h2 class="rounded-borders-btn">Preferencias</h2>
+        <ul class="aside-nav">
+          <li><a href="<%= edit_user_registration_path %>">Contraseña</a></li>        </ul>
+        <% if !current_user.company? %>
+            <ul class="aside-nav">
+              <li><a href="<%= users_newsletter_freq_path %>">Frecuencia del newsletter</a></li>
+            </ul>
+            </ul>
+        <% end %>
+      </div>
+      <!--<div id="bags">-->
+      <!--<div id="stage">-->
+      <!--<div id="block"></div>-->
+      <!--</div>-->
+      <!--</div>-->
+    </aside><!--end sidebar-->
+  </div><!--end container-->
+</div><!--end row-->

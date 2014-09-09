@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DealHunter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Le styles -->
+  <link href="../assets/bootstrap.css" rel="stylesheet">
+  <link href="../assets/dealhunter.css" rel="stylesheet">
+
+  <!--    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  -->
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <![endif]-->
+
+  <style>
+          /*esto es sólo para el landing
+          */
+      html,
+      body {
+          margin:0;
+          padding:0;
+          height:100%;
+      }
+  </style>
+
+</head>
+
+<body id="landing">
+<div id="wrapper-landing">
+
+  <!--container-->
+  <div class="container container-height">
+    <div class="row">
+      <div class="span6 center logo"><img src="../assets/logo-landing.png"></div>
+    </div>
+
+    <div class="row">
+
+      <section class="span4 center window" id="welcome-form-membresia">
+        <div class="wrapper-padding light-shadowed rounded-borders opaqueBG">
+          <% if !alert.nil?%>
+              <div class="alert">
+                <%= alert %>
+              </div>
+          <%end%>
+          <h3>Completá los siguientes datos:</h3>
+          <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+              <%= f.email_field :email, :class => "input wide", :placeholder=>"Email" , :required => true%>
+
+              <%= f.password_field :password, :class => "input wide", :placeholder => "Contraseña", :required => true%>
+
+              <p><a href="#myModalPassword" role="button" class="forgot-pass" data-toggle="modal">Olvidé mi contraseña</a></p>
+              <p>¿Todavía no sos miembro? <a href="<%= new_user_registration_path %>">Registrate en Deal Hunter.</a></p>
+              <% if devise_mapping.rememberable? -%>
+                  <label class="checkbox">
+                    <%= f.check_box :remember_me %> Recordarme
+                  </label>
+              <% end -%>
+
+              <button type="submit" class="btn btn-dealhunter medium full-width rounded-borders-btn">Entrar</button>
+          <% end %>
+        </div>
+        <!--<div style="padding: 0px 2% 2% 2%;">-->
+        <!--<a href="#myModal" role="button" class="btn btn-facebook medium full-width" data-toggle="modal"><i class="icon-facebook"></i>Conectar con Facebook</a>-->
+        <!--</div> -->
+      </section>
+
+
+    </div><!--end row-->
+  </div><!--end container-->
+
+  <!--footer-->
+  <footer id="footer-wrapper" class="dh-footer">
+    <div class="container">
+      <hr>
+
+      <div id="footer-middle" class="row">
+        <div class="span7">
+          <nav>
+            <ul class="inline">
+              <li><a href="<%= pages_we_path %>">Quiénes Somos</a></li>
+              <li><a href="<%= pages_work_with_us_path %>">Trabajá con Nosotros</a></li>
+              <li><a href="<%= pages_form_company_path %>">Queres publicar?</a></li>
+              <li><a href="<%= pages_faqs_path %>">Ayuda</a></li>
+              <li><a href="<%= pages_form_contact_path%>">Contacto</a></li>
+            </ul>
+          </nav>
+          <p class="copyright">Copyright © 2013 DealHunter.com. Todos los derechos reservados</p>
+        </div>
+        <div class="span3">
+          <ul id="custumer-support" class="pull-right">
+            <li class="custumer-support-title">Atención al Cliente</li>
+            <li class="telephone-number">0800-111-DEAL(3315)</li>
+            <li class="contact-mail"><a href="#"><i class="icon-contact-mail"></i> info@dealhunter.com</a></li>
+          </ul>
+        </div>
+
+        <div class="span2">
+          <ul class="inline pull-right social">
+            <li><a href="#" target="_blank"><img src="/assets/icon-fb.png"></a></li>
+            <li><a href="https://twitter.com/dealhunterArg" target="_blank"><img src="/assets/icon-twitter.png"></a></li>
+            <li><a href="#" target="_blank"><img src="/assets/icon-gPlus.png"></a></li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <!--end footer-->
+
+</div><!-- wrapper-landing -->
+
+<!-- Modal -->
+<div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <form>
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">Inscribite gratis</h3>
+    </div>
+    <div class="modal-body">
+      <p>El formulario ya se completó con tu información de Facebook. Ahora solo falta que finalices tu inscripción.</p>
+
+      <input type="text" class="input wide" placeholder="Nombre">
+      <input type="text" class="input wide" placeholder="Apellido">
+      <input type="text" class="input wide" placeholder="Email">
+      <input type="text" class="input wide" placeholder="País">
+      <input type="password" class="input wide" placeholder="Contraseña">
+      <input type="password" class="input wide" placeholder="Repetir Contraseña">
+      <label class="checkbox">
+        <input type="checkbox" checked> Sí, he leído las condiciones generales de venta y acepto recibir ofertas de DealHunter por email.
+      </label>
+
+
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+      <button class="btn btn-dealhunter">Inscribite</button>
+    </div></form>
+</div>  <!--end Modal-->
+
+
+<!-- Modal -->
+<div id="myModalPassword" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name)) do |f| %>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel2">Recuperar Contraseña</h3>
+      </div>
+      <div class="modal-body">
+        <p>Ingresa tu dirección de correo electrónico y te enviaremos tu contraseña a tu casilla.</p>
+        <%= f.email_field :email, :class => "input wide" , :placeholder=> "Email" %>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+        <button type="submit" class="btn btn-dealhunter">Recuperar</button>
+      </div>  <% end %>
+</div>  <!--end Modal-->
+
+
+<script src="../assets/facebook.js.coffee.erb"></script>
+
+<script>
+    /* $(document).ready(function(){
+     $("#welcome-form-membresia").hide();
+     $("#login-alert").hide();
+     $("#register-alert").hide();
+     $("#btn-inscribite").click(function(){
+     $("#welcome-form").hide();
+     $("#welcome-form-membresia").show();
+     });
+     });
+
+     function logInFailure(){
+     $("#welcome-form").hide();
+     $("#welcome-form-membresia").show();
+     $("#login-alert").show();
+     }
+
+     function registrationFailure(){
+     $("#register-alert").show();
+     }
+
+     function showFbModal(){
+     $("#myModal").show();
+     }   */
+</script>
+
+</body>
+
+</html>

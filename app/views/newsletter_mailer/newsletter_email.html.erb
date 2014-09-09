@@ -1,0 +1,351 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<!-- Le styles -->
+<%= stylesheet_link_tag 'bootstrap.css' %>
+<%= stylesheet_link_tag 'formtastic.css' %>
+<%= stylesheet_link_tag 'dealhunter.css' %>
+<%= stylesheet_link_tag 'gmaps4rails' %>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<script src="/../assets/bootstrap-dropdown.js"></script>
+<script src="/../assets/bootstrap-tab.js"></script>
+<script src="/../assets/bootstrap-modal.js"></script>
+<script src="/../assets/jquery_nested_form.js"></script>
+<script src="/../assets/validationScript.js"></script>
+<script src="/../assets/gmaps4rails/gmaps4rails.base.js.coffee"></script>
+<script src="/../assets/gmaps4rails/gmaps4rails.bing.js.coffee"></script>
+<script src="/../assets/gmaps4rails/gmaps4rails.googlemaps.js.coffee"></script>
+<script src="/../assets/gmaps4rails/gmaps4rails.mapquest.js.coffee"></script>
+<script src="/../assets/gmaps4rails/gmaps4rails.openlayers.js.coffee"></script>
+<script src="http://localhost:9292/faye.js"></script>
+<script src="/../assets/pushNotifications.js"></script>
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Dealhunter, la publicidad revolucionada.</title>
+  <style>
+      a,
+      a:hover {
+          text-decoration: none !important;
+      }
+
+      h1, h2, h3, h4, h5 {
+          margin: 0px !important;
+      }
+
+      p {
+          font-size: 14px;
+          line-height: 20px;
+          color: #333;
+      }
+
+      li {
+          list-style: none;
+      }
+
+      .middleTd {
+          background: url(http://cursosflipstudios.com.ar/imgdeal/bgTexture.png);
+          /*aca vendria la imagen de la textura posta, hay que subirla al servidor*/
+
+      }
+
+      .light-shadowed {
+          -webkit-box-shadow: 9px 9px 13px -4px rgb(99, 98, 98);
+          -moz-box-shadow: 9px 9px 13px -4px rgb(99, 98, 98);
+          box-shadow: 9px 9px 13px -4px rgb(99, 98, 98);
+      }
+
+      body {
+          font-family: Arial, Helvetica, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: white;
+      }
+
+      .whitebg {
+          background: white;
+      }
+
+      .firstTd {
+          background: #F5F5F5;
+          color: #696969;
+          border: 1px solid #C4C4C4;
+      }
+
+      .firstP {
+          margin: 0;
+          letter-spacing: -0.6px;
+          color: #66cdaa;
+          font-weight: bold;
+          font-size: 17px;
+          margin: 0;
+      }
+
+      .firstTable {
+          background: rgb(23, 46, 117);
+          color: #fff;
+          border-radius: 5px;
+      }
+
+      .firstA {
+
+      }
+
+      .secondTD {
+      }
+
+      .no-padding {
+          margin: 0 !important;
+      }
+  </style>
+</head>
+<body style="" marginheight="0" topmargin="0" marginwidth="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#cbebfa">
+<tr>
+  <td>
+    <!--header-->
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr style="      -webkit-box-shadow: 9px 9px 13px -4px rgb(99, 98, 98);
+              -moz-box-shadow: 9px 9px 13px -4px rgb(99, 98, 98);
+              box-shadow: 9px 9px 13px -4px rgb(99, 98, 98);
+      ">
+        <td valign="middle" align="center" height="100" style="          background: white;
+        " bgcolor="#fff">
+          <img src="http://cursosflipstudios.com.ar/imgdeal/logo-landing.png" alt="dealhunter, Tu club privado de viajes y escapadas" width="258" height="100" longdesc="http://www.dealhunter.com">
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="center" class="firstTd" style="     background: #F5F5F5;
+                color: #696969;
+                border: 1px solid #C4C4C4;
+        ">
+          <table width="600" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="58" width="480">
+                <p style="margin: 0 ;
+                        letter-spacing: -0.6px;
+                        color: #66cdaa;
+                        font-weight: bold;
+                        font-size: 17px;
+                        margin: 0 ;">Participá en estas y más ofertas de tu
+                  interés</p></td>
+              <td width="120">
+                <table width="120" border="0" cellspacing="0" cellpadding="10" style="background: rgb(23, 46, 117);
+                        color: #fff;
+                        border-radius: 5px;">
+                  <tr>
+                    <td align="center" width="120">
+                      <a href="http://localhost:3000" class=" rounded-borders-btn firstA" style="color: white;
+                              font-size: 12px;
+                              text-decoration: none;
+                              text-align: center;">VER OFERTAS</a></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <!-- end header-->
+  </td>
+</tr>
+<tr>
+  <td style="       background: url(http://cursosflipstudios.com.ar/imgdeal/bgTexture.png);
+  " valign="middle" align="top">
+    <!--body-->
+    <!--divider-->
+    <table width="600" height="40" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="40"></td>
+      </tr>
+    </table>
+    <!--end divider-->
+
+    <!--content one-->
+    <table style="          border-radius: 25px 25px 25px 25px;        -webkit-box-shadow: 9px 9px 13px -4px rgb(99, 98, 98);
+            -moz-box-shadow: 9px 9px 13px -4px rgb(99, 98, 98);
+            box-shadow: 9px 9px 13px -4px rgb(99, 98, 98);
+            background: white;
+
+
+    " class=" whitebg" width="750" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#fff">
+      <tr>
+        <td width="330" valign="top">
+          <table width="100%" border="0" cellspacing="0" cellpadding="20">
+            <tr>
+              <td style="     font-size: 14px;
+                      line-height: 20px;
+                      color: #333;
+              ">
+
+                <% i =0 %>
+                <% @offers.each do |offer| %>
+
+                    <% if i%3 == 0 %>
+
+                        <div class="row">
+
+                    <% end %>
+
+                    <div class="span3 offer-small">
+                      <!-- 	/* solapa --------------------------- */-->
+                      <ul class="flap-items">
+                        <li style="          list-style: none;
+                        " class="img_item">
+                          <% unless offer.photo.nil? %>
+                              <img class="small-photo " src="<%= offer.photo %>" alt=""
+                                   style="height: 195px;"/>
+                          <% end %>
+                        </li>
+                      </ul>
+
+                      <div class="row">
+                        <div class="span3" style="position:relative;">
+                          <div class="wrapper-padding">
+                            <ul class="inline hotel-item clearfix">
+                              <li style="          list-style: none;
+                              ">
+                                <h3 class="media-heading"><a href="<%= offer_path(offer) %>"> <%= offer.name %> </a>
+                                </h3>
+                                <% unless offer.branch.nil? %>
+                                    <h5> <%= offer.branch.company.name %> - <%= offer.branch.name %> </h5>
+                                <% end %>
+                                <hr style="margin-top: 5px; margin-bottom: 5px;
+                                ">
+                                <h7><p style="color: grey">Precio:
+                                  $<%= offer.prizes.first.discounted_price unless offer.prizes.first.nil? %> </p>
+
+                                  <p style="color: grey">Descuento: <%= "-" + offer.prizes.first.discount_percentage.to_i.to_s + "%" unless offer.prizes.first.nil? %> </p>
+                                </h7>
+
+                              </li>
+                              <li style="          list-style: none;
+                              ">
+                                <ul>
+                                  <li style="          list-style: none;
+                                  " class="offer-disccount"></li>
+                                  <li style="          list-style: none;
+                                  " class="offer-price"></li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </div>
+                          <!--end wrapper-padding-->
+                        </div>
+                        <!--end span3-->
+                      </div>
+                      <!--end row-->
+                    </div>
+                    <!--end span3-->
+
+
+
+                    <% i += 1 %>
+                    <% if i%3 == 0 %>
+
+                        </div>
+
+                    <% end %>
+                <% end %>
+
+
+              </td>
+            </tr>
+          </table>
+        </td>
+
+      </tr>
+      <tr>
+        <td valign="middle" align="center" height="21">
+          <img src="https://s3-us-west-2.amazonaws.com/vontrip/img+html+mailer+app/divider.jpg" width="551" height="21">
+        </td>
+      </tr>
+
+      <tr>
+        <td valign="middle" align="center">
+          <h2 style="          color: mediumAquaMarine;
+                  padding: 10px 0;
+          ">Encontrá las mejores ofertas<br> para vos</h2></td>
+
+      </tr>
+      <tr style="height:70px;">
+        <td align="center">
+          <a href="http://localhost:3000" style="background-color: rgb(23, 46, 117);
+                  color: #fff;
+                  text-decoration: none;
+                  font-size: 20px;
+                  padding: 10px;
+                  margin: 10px;
+                  border-radius: 5px;
+          ">VER
+            OFERTAS</a></td>
+      </tr>
+
+    </table>
+    <!--end content one-->
+
+    <!--divider-->
+    <table width="600" height="40" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="40"></td>
+      </tr>
+    </table>
+    <!--end divider-->
+
+    <!--end body-->
+  </td>
+</tr>
+<tr>
+  <td>
+    <!--footer-->
+    <table width="100%" style="border-top: solid mediumaquamarine 2px;" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="middle" align="center" style="background:#fff;" height="110" bgcolor="#fff">
+          <!--pre-footer-->
+          <table width="600" height="110" border="0" cellspacing="0" cellpadding="0" style="padding: 20px;">
+            <tr>
+              <td width="512">
+                <p class="no-padding">Atención al Cliente</p>
+
+                <h3 style="font-weight:bold; margin:0px;">0800-345-DEAL(3325)</h3>
+
+                <p style="margin:0px; font-size: 12px; line-height:20px;">
+                  <a href="mailto:info@dealhunter.com" style="color:#333; text-decoration:none;">info@dealhunter.com</a>
+                </p>
+              </td>
+              <td width="88">
+                <table width="88" border="0" cellspacing="0" cellpadding="0" height="34">
+                  <tr>
+                    <td width="32">
+                      <a href="http://www.facebook.com/dealhunterArgentina"><img src="https://s3-us-west-2.amazonaws.com/vontrip/img+html+mailer+app/icon-fb.jpg" width="32" height="24" alt="Facebook"></a>
+                    </td>
+                    <td width="32">
+                      <a href="http://www.twitter.com/dealhunterArg"><img src="https://s3-us-west-2.amazonaws.com/vontrip/img+html+mailer+app/icon-twitter.jpg" width="32" height="24" alt="Twitter"></a>
+                    </td>
+                    <td width="24">
+                      <a href="https://www.google.com"><img src="https://s3-us-west-2.amazonaws.com/vontrip/img+html+mailer+app/icon-gPlus.jpg" width="24" height="24" alt="google"></a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!--end pre-footer-->
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" align="center" style="background:#fcfcfc;" height="70" bgcolor="#fcfcfc">
+          <!--post-footer-->
+          <!--end post-footer-->
+        </td>
+      </tr>
+    </table>
+    <!--end footer-->
+  </td>
+</tr>
+</table>
+</body>
+</html>

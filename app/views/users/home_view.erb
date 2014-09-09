@@ -1,0 +1,206 @@
+<div class="container" id="main-content2">
+  <div class="row">
+
+
+    <!-- 	/* solapa --------------------------- */-->
+    <%if @offers.empty?%>
+        <%if @user.company? %>
+            <div id="main-content" class="span8 center">
+              <div class="span4 message-box center">
+                <div class="text-center">
+                  <p class="ng-binding">Hola,</p>
+                  <p>En el momento no tienes ninguna oferta activa</b>.</p>
+                  <p><a href="<%= new_offer_path %>"> Carga una nueva oferta para publicitar tu empresa.</a></p>
+                  <p>Te saluda,<br>El equipo de <b>Dealhunter</b></p>
+                </div>
+              </div>
+            </div>
+        <%else%>
+            <div id="main-content" class="span8 center">
+              <div class="span4 message-box center">
+                <div class="text-center">
+                  <p class="ng-binding">Hola,</p>
+                  <p>Todavía no hay ofertas para mostrarte, pero no desesperes, quedate en <b>Dealhunter</b>.</p>
+                  <p>Esperamos poder ayudarte a obtener los mejores beneficios.</p>
+                  <p>Te saluda,<br>El equipo de <b>Dealhunter</b></p>
+                </div>
+              </div>
+            </div>
+        <%end%>
+    <% else %>
+
+        <% i =0 %>
+        <% @offers.each do |offer| %>
+
+            <% if i%3 == 0 %>
+
+                <div class="row">
+
+            <%end%>
+
+            <div class="span4 offer-small rounded-borders">
+              <!-- 	/* solapa --------------------------- */-->
+              <ul class="flap-items">
+                <li class="img_item">
+                  <div class="caption">
+                    <ul class="offer-price-box pull-left">
+                      <li class="offer-disccount"><%= "-" + offer.prizes.first.discount_percentage.to_i.to_s + "%" unless offer.prizes.first.nil?%> </li>
+                      <li class="offer-price">$<%= offer.prizes.first.discounted_price unless offer.prizes.first.nil? %></li>
+                    </ul>
+
+                    <%if offer.start_date.to_date < Date.current and offer.end_date.to_date > Date.current%>
+                        <ul class="time-left pull-left">
+                          <li>
+                            <ul class="inline" style="margin-top:8px;">
+                              <li><ul class="inline"><li>En curso </li><li></li></ul></li>
+                            </ul>
+                          </li>
+                          <li><p>Aprovechala!</p></li>
+                        </ul>
+
+                    <%elsif offer.start_date.to_date < Date.current and offer.end_date.to_date < Date.current%>
+                        <ul class="time-left pull-left">
+                          <li>
+                            <ul class="inline" style="margin-top:8px;">
+                              <li><ul class="inline"><li>Finalizada </li><li></li></ul></li>
+                            </ul>
+                          </li>
+                          <li><p>No pierdas otra!</p></li>
+                        </ul>
+                    <%else%>
+                        <ul class="time-left pull-left">
+                          <li>
+                            <% distance = time_distance(offer.start_date.to_datetime) %>
+                            <ul class="inline" style="margin-top:8px;">
+                              <li><ul class="inline"><li><%= distance[:days] %></li><li>D</li></ul></li>
+                              <li><ul class="inline"><li><%= distance[:hours] %></li><li>H</li></ul></li>
+                              <li><ul class="inline"><li><%= distance[:minutes] %></li><li>M</li></ul></li>
+                            </ul>
+                          </li>
+                          <li><p>Para el comienzo</p></li>
+                        </ul>
+                    <%end%>
+                    <!-- End of .flap-items -->
+                    <!-- 	/* solapa --------------------------- */-->
+                    <ul class="secondary-info pull-right">
+                      <li>
+                        <h3> <%= offer.clients.count %> </h3><p>Usuarios Inscriptos</p>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <% unless offer.photo.nil? %>
+                      <img class="small-photo rounded-borders-top" src="<%= offer.photo %>" alt="" />
+                  <%end%>
+                </li>
+              </ul>
+
+
+              <div class="row">
+                <div class="span4" style="position:relative;">
+                  <img src="../assets/arrow-opentab.jpg" class="button-arrow">
+                  <div class="wrapper-padding">
+                    <ul class="inline hotel-item clearfix">
+                      <li class="pull-left">
+                        <h4 class="media-heading"><a href="<%= offer_path(offer)%>"><%=offer.name%></a></h4>
+                        <% unless offer.branch.nil? %>
+                            <h5> <%=offer.branch.name%> </h5>
+                        <%end%>
+                      </li>
+                      <li class="pull-right">
+                        <a href="<%= offer_path(offer)%>"><button type="button" class="btn btn-dealhunter medium full-width rounded-borders-btn" id="btn-inscribite">Ver Oferta</button></a>
+                      </li>
+                    </ul>
+                  </div><!--end wrapper-padding-->
+                </div><!--end span4-->
+              </div><!--end row-->
+            </div><!--end span4-->
+
+
+
+            <% i += 1 %>
+            <% if i%3 == 0 %>
+
+                </div>
+
+            <%end%>
+
+        <% end %>
+
+    <% end %>
+
+
+
+  </div>
+
+</div><!--end row-->
+</div><!--end container-->
+
+
+<% @offers.each do |offer| %>
+
+    <div id="offer_<%=offer.id%>" class="modal modal-window hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="label"><%= offer.name %> </h3>
+      </div>
+      <div class="modal-body">
+        <div class="media hotel-item">
+          <a class="pull-right" href="#">
+            <% unless offer.photo.nil? %>
+                <img src="<%= offer.photo%>" class="media-object imgCenter">
+            <%end%>
+          </a>
+          <div class="media-body">
+            <p>
+              <b>Fecha de inicio:</b>
+              <%= offer.start_date.strftime("%d/%m/%y") %>
+            </p>
+            <p>
+              <b>Fecha de finalización:</b>
+              <%= offer.end_date.strftime("%d/%m/%y") %>
+            </p>
+          </div><!--end media-body-->
+          <hr>
+          <p>
+            <b>Clientes adheridos: </b>
+            <%= offer.clients.count %>
+          </p>
+
+
+          </hr>
+
+          <hr>
+          <p class="row">
+          <div class="span3">  <b>Premio: </b>
+            <ul class="text-left">
+              <% i=1 %>
+              <% offer.prizes.each do |prize| %>
+                  <li type="disc"><%= i %>) <%= prize.name %> - <%= prize.real_price %>(<%= prize.discount_percentage %>).</li>
+                  <% i+=1 %>
+              <%end%>
+
+            </ul>
+
+
+          </div>
+          <div class="span3"> <b>Sucursal: </b>
+            <ul class="text-left">
+              <li type="disc"> <%= offer.branch.name unless offer.branch.nil?%></li>
+
+
+            </ul>
+          </div>
+          </p>
+          </hr>
+
+          <%= link_to 'Incribir', users_inscribe_path(:offer_id => offer.id), { :type =>"button", :class => "btn btn-dealhunter medium full-width", :method => :post, } %>
+
+          </hr>
+
+        </div>
+
+      </div>
+    </div>
+
+<%end%>

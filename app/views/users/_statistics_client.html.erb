@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+
+  <script type='text/javascript'>//<![CDATA[
+  var m_timer = null;
+
+  jQuery(document).ready(function ()
+  {
+      $("div#footer").empty();
+      $("div#footer").append("<a href='/'><img  src='/assets/flip_logo_aadmin.png' width='90px' height='35px' style='margin-top: 35px;'/></a> ");
+      $("div#footer").css("float", "right");
+  });
+
+
+  </script>
+</head>
+<body>
+<div class="wrapper-padding">
+
+  <div class="wrapper">
+    <article>
+
+      <ul id="myTab" class="nav nav-tabs">
+        <li class="active"><a href="#titles" data-toggle="tab">Intereses</a></li>
+        <li><a href="#activity" data-toggle="tab">Actividad</a></li>
+        <li><a href="#completadas" data-toggle="tab">Participación</a></li>
+      </ul>
+
+      <div id="myTabContent" class="tab-content">
+
+        <div class="tab-pane active clearfix" id="titles">
+
+          <label class="pull-left"><h5>Cantidad de ofertas a las que te has inscripto por interés</h5></label>
+          <div id="interesesChart" style="height: 310px;"></div>
+
+        </div><!--end myTabContent-->
+
+        <div class="tab-pane active clearfix" id="activity">
+
+          <label class="pull-left"><h5>Cantidad de ofertas a las que te has inscripto en el último año</h5></label>
+          <div id="actividadChart" style="height: 310px;"></div>
+
+        </div><!--end myTabContent-->
+
+        <div class="tab-pane active clearfix" id="completadas">
+
+          <label class="pull-left"><h5>Ofertas que has ganado y perdido</h5></label>
+          <div id="winChart" style="height: 310px;"></div>
+
+        </div><!--end myTabContent-->
+
+      </div>
+
+    </article>
+
+  </div>
+  <!--end wrapper-->
+</div>
+
+
+</body>
+</html>
+<script> //INTERESES
+
+    new Morris.Donut({
+        element: 'interesesChart',
+        data: [
+            <% Title.all.each do |t| %>
+                <% unless @titles[t.name] == 0 %>
+                    {label: "<%=t.name%>", value: <%= @titles[t.name] %>},
+                <% end %>
+            <% end %>
+        ],
+        colors: [
+            '#FF0000',
+            '#FF8000',
+            '#FFFF00',
+            '#80FF00',
+            '#006600',
+            '#00FF80',
+            '#00CCCC',
+            '#0000FF',
+            '#000066',
+            '#4C0099',
+            '#FF00FF',
+            '#FF99CC'
+        ]
+    });
+
+//ACTIVIDAD
+   new Morris.Bar({
+        element: 'actividadChart',
+        data: [
+            <% @activity.each do |a| %>
+                    { y: '<%= a[0] %>', a: <%= a[1] %>, b: <%= a[2] %> },
+            <% end %>
+        ],
+        xkey: 'y',
+        ykeys: ['a', 'b'],
+        labels: ['Inscripciones', 'Participaciones'],
+        barColors: ['orange','lightgrey']
+    });
+
+new Morris.Donut({
+    // ID of the element in which to draw the chart.
+    element: 'winChart',
+    // Chart data records -- each entry in this array corresponds to a point on
+    // the chart.
+
+
+    data: [
+
+        {label: "Ganó", value: <%=@user.client.win %> },
+        {label: "Perdió", value: <%=@user.client.lose %> }
+
+    ],
+
+    colors: [
+        '#e23351',
+        '#0BA462'
+    ]
+
+});
+
+$('#activity').attr("class","tab-pane");
+$('#completadas').attr("class","tab-pane");
+
+</script>

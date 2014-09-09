@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Offer:</b>
+  <%= @prize.offer_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @prize.name %>
+</p>
+
+<p>
+  <b>Real price:</b>
+  <%= @prize.real_price %>
+</p>
+
+<p>
+  <b>Discount percentage:</b>
+  <%= @prize.discount_percentage %>
+</p>
+
+
+<%= link_to 'Edit', edit_prize_path(@prize) %> |
+<%= link_to 'Back', prizes_path %>

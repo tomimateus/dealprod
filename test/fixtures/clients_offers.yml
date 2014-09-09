@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  offer_id: 1
+  client_id: 1
+  position: 1
+  participated: false
+
+two:
+  offer_id: 1
+  client_id: 1
+  position: 1
+  participated: false

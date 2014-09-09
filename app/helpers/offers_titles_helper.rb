@@ -1,0 +1,2 @@
+module OffersTitlesHelper
+end

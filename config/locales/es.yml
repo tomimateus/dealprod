@@ -1,0 +1,251 @@
+es:
+
+  formtastic:
+    :yes: "Sí"
+    :no: "No"
+
+  activerecord:
+    attributes:
+      admin_user:
+        email: Mail
+        password: Contraseña
+        password_confirmation: Confirmación
+        encrypted_password: Contraseña encriptada
+        current_sign_in_at: Sign in actual
+        last_sign_in_at: Último sign in
+        sign_in_count: Cantidad de sign in
+        created_at: Fecha de creación
+        updated_at: Fecha de actualización
+      address:
+        city: Localidad
+        country: Pais
+        floor: Piso
+        number: Numero
+        state: Provincia
+        client: Cliente
+        branch: Sucursal
+      branch:
+        company: Empresa
+        name: Nombre
+        address: Direccion
+      user:
+        email: Mail
+        password: Contraseña
+        created_at: Creación
+        updated_at: Actualización
+        current_sign_in_at: Sign in actual
+        last_sign_in_at: Último sign in
+        sign_in_count: Cant. sing in
+        password_confirmation: Confirmación contraseña
+      client:
+        address_id: Dirección
+        first_name: Nombre
+        last_name: Apellido
+        user_id: Usuario
+        email: Mail
+        password: Contraseña
+        created_at: Creación
+        updated_at: Actualización
+      company:
+        cuit: Cuit
+        name: Nombre
+        user_id: Usuario
+        created_at: Creación
+        updated_at: Actualización
+        email: Mail
+      address:
+        country: País
+        street: Calle
+        city: Localidad
+        state: Provincia
+        floor: Piso
+        number: Número
+      offer:
+        company: Empresa
+        end_date: Fecha de fin
+        name: Nombre
+        start_date: Fecha de inicio
+        photo: Foto
+        branch: Sucursal
+      prize:
+        discount_percentage: Porcentaje de Descuento
+        name: Título
+        offer: Oferta
+        real_price: Precio Original
+    models:
+       address: Dirección
+       admin_user: Administrador
+       branch: Sucursal
+       client: Cliente
+       company: Empresa
+       country: País
+       offer: Oferta
+       prize: Premio
+       title: Area
+       user: Usuario
+
+    errors:
+      messages:
+        record_invalid: Registro Inválido
+      models:
+        user:
+          attributes:
+            email:
+              taken: Ya existe un usuario con ese mail
+              invalid: Mail inválido
+              blank: Completar
+            password:
+              too_short: Demasiado corta (min 8 caracteres)
+              confirmation: Contraseñas no coinciden
+              blank: Completar
+        company:
+          attributes:
+            name:
+              blank: No puede estar en blanco
+              too_short: Demasiado corto
+              too_long: Demasiado largo
+            email:
+              taken: Ya existe un usuario con ese mail
+              invalid: Mail inválido
+              blank: Completar
+            password:
+              too_short: Demasiado corta (min 8 caracteres)
+              confirmation: Contraseñas no coinciden
+              blank: Completar
+        admin_user:
+          attributes:
+            email:
+              invalid: Mail inválido
+              blank: Completar
+              taken: Ya existe
+            password:
+              too_short: Demasiado corta (min 8 caracteres)
+              confirmation: No coinciden
+              blank: Completar
+        address:
+          attributes:
+            state:
+              blank: No puede estar en blanco
+              too_short: Demasiado corto
+              too_long: Demasiado largo
+            city:
+              blank: No puede estar en blanco
+              too_short: Demasiado corto
+              too_long: Demasiado largo
+            street:
+              blank: No puede estar en blanco
+              too_short: Demasiado corto
+              too_long: Demasiado largo
+            number:
+              blank: No puede estar en blanco
+              too_short: Demasiado corto
+              too_long: Demasiado largo
+              not_a_number: Debe ser un número
+  time:
+    am: am
+    formats:
+      default: ! '%A, %d de %B de %Y %H:%M:%S %z'
+      long: ! '%d de %B de %Y %H:%M'
+      short: ! '%d de %b %H:%M'
+    pm: pm
+
+  date:
+    abbr_day_names:
+    - dom
+    - lun
+    - mar
+    - mié
+    - jue
+    - vie
+    - sáb
+    abbr_month_names:
+    -
+    - ene
+    - feb
+    - mar
+    - abr
+    - may
+    - jun
+    - jul
+    - ago
+    - sep
+    - oct
+    - nov
+    - dic
+    day_names:
+    - domingo
+    - lunes
+    - martes
+    - miércoles
+    - jueves
+    - viernes
+    - sábado
+    formats:
+      default: ! '%d/%m/%Y'
+      long: ! '%d de %B de %Y'
+      short: ! '%d de %b'
+    month_names:
+    -
+    - enero
+    - febrero
+    - marzo
+    - abril
+    - mayo
+    - junio
+    - julio
+    - agosto
+    - septiembre
+    - octubre
+    - noviembre
+    - diciembre
+    order:
+    - :day
+    - :month
+    - :year
+
+
+
+  errors:
+      messages:
+        expired: "ha expirado, por favor pida una nueva"
+        not_found: "no encontrado"
+        already_confirmed: "ya ha sido confirmado, por favor intente de iniciar sesión"
+        not_locked: "no ha sido bloqueado"
+        not_saved:
+          one: "Un error no permite que este %{resource} sea guardado:"
+          other: "%{count} errores no permiten que este %{resource} sea guardado:"
+
+  devise:
+    failure:
+      already_authenticated: "Ya has iniciado sesión."
+      unauthenticated: "Necesitas iniciar sesión o registrarte para continuar."
+      unconfirmed: "Debes confirmar tu cuenta para continuar."
+      locked: "Tu cuenta está bloqueada."
+      invalid: "Mail o contraseña inválido."
+      invalid_token: "Invalid authentication token."
+      timeout: "Tu sesión ha expirado, por favor inicie sesión nuevamente para continuar."
+      inactive: "Tu cuenta no ha sido activada aun."
+      user:
+        not_found_in_database: "Mail o contraseña inválido"
+      admin_user:
+        not_found_in_database: "Mail o contraseña inválido"
+    sessions:
+      signed_in: "Inicio de sesión exitoso."
+      signed_out: "Cierre de sesión exitoso."
+    registrations:
+      signed_up: "Bienvenido! Tu registro ha sido exitoso."
+      updated: "Has modificado tu cuenta exitosamente."
+      destroyed: "¡Adios! Tu cuenta ha sido cancelada exitosamente.Esperamos verte pronto."
+    mailer:
+      confirmation_instructions:
+        subject: "Instrucciones de confirmación"
+      reset_password_instructions:
+        subject: "Instrucciones de reseto de contraseña"
+      unlock_instructions:
+        subject: "Instrucciones de desbloqueo"
+
+  support:
+    array:
+      two_words_connector: " y "
+      words_connector: ", "
+      last_word_connector: " y "

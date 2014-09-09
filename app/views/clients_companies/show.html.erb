@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Client:</b>
+  <%= @clients_company.client_id %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @clients_company.company_id %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @clients_company.weight %>
+</p>
+
+
+<%= link_to 'Edit', edit_clients_company_path(@clients_company) %> |
+<%= link_to 'Back', clients_companies_path %>

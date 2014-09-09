@@ -1,0 +1,17 @@
+<div class="container" id="main-content2">
+<% if @latitude == -34.6 && @longitude == -58.4 %>
+  <%= gmaps("map_options" => {
+        "zoom" => 13,
+        "center_latitude" => -34.6,
+        "center_longitude" => -58.4,
+        "auto_adjust" => false,
+}, "markers" => { "data" => @json}) %>
+<% else %>
+      <%= gmaps("map_options" => {
+              "zoom" => 13,
+              "center_latitude" => @latitude,
+              "center_longitude" => @longitude,
+              "auto_adjust" => false,
+      }, "markers" => { "data" => @json}) %>
+<% end %>
+    </div>

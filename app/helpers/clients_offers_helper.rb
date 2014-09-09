@@ -1,0 +1,2 @@
+module ClientsOffersHelper
+end

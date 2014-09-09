@@ -1,0 +1,56 @@
+<div class="container" id="main-content">
+  <div class="row">
+    <section class="span8 rounded-borders light-shadowed">
+
+      <a href="<%= users_offers_client_user_path %>" role="button">
+        <h2 id="recommend-to-friend" class="pull-right rounded-borders light-shadowed">Volver</h2>
+      </a>
+
+      <header class="out rounded-borders-top">
+        <h2>Ofertas</h2>
+      </header>
+
+      <div class="wrapper-padding">
+
+        <div class="wrapper">
+          <article>
+
+
+
+
+          </article>
+
+        </div>
+        <!--end wrapper-->
+      </div>
+    </section>
+    <!--end main content-->
+
+    <!--sidebar-->
+    <aside class="span4" style="background: none;">
+
+      <div class="wrapper-padding rounded-borders light-shadowed" style="background: #ffffff;">
+
+        <h2 class="rounded-borders-btn">Detalle de Cuenta</h2>
+        <ul class="aside-nav">
+          <li><a href="<%= users_offers_client_user_path %>" class="active">Mis Ofertas</a></li>
+          <li><a href="<%= users_titles_user_path %>">Mis Intereses</a></li>
+        </ul>
+        <h2 class="rounded-borders-btn">Información Personal</h2>
+        <ul class="aside-nav">
+          <li><a href="<%= edit_user_path(current_user)%>">Mi Perfil</a></li>
+          <li><a href="<%= users_statistics_path %>">Mis Estadísticas</a></li>
+        </ul>
+        <h2 class="rounded-borders-btn">Preferencias</h2>
+        <ul class="aside-nav">
+          <li><a href="<%= edit_user_registration_path %>">Contraseña</a></li>        </ul>
+        </ul>
+      </div>
+      <!--<div id="bags">-->
+      <!--<div id="stage">-->
+      <!--<div id="block"></div>-->
+      <!--</div>-->
+      <!--</div>-->
+    </aside><!--end sidebar-->
+  </div><!--end container-->
+</div><!--end row-->

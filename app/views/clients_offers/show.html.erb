@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Offer:</b>
+  <%= @clients_offer.offer_id %>
+</p>
+
+<p>
+  <b>Client:</b>
+  <%= @clients_offer.client_id %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @clients_offer.position %>
+</p>
+
+<p>
+  <b>Participated:</b>
+  <%= @clients_offer.participated %>
+</p>
+
+
+<%= link_to 'Edit', edit_clients_offer_path(@clients_offer) %> |
+<%= link_to 'Back', clients_offers_path %>

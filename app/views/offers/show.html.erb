@@ -1,0 +1,289 @@
+<!--container-->
+
+<div class="container" id="main-content">
+<div class="row">
+<section class="span8 rounded-borders light-shadowed">
+  <div class="wrapper-padding">
+    <% if !session[:flash].nil? %>
+        <% if !session[:flash][:notice].nil? %>
+            <div class="alert" id="login-alert">
+              <%= session[:flash][:notice] %>
+            </div>
+        <% end %>
+    <% end %>
+    <header class="rounded-borders-btn" style="
+    padding: 1px 10px;
+    ">
+      <h2> <%= @offer.name %> </h2>
+
+      <h3> <%= @offer.branch.company.name %> / <%= @offer.branch.name %> </h3>
+    </header>
+
+    <hr>
+
+    <!--end share-btns-->
+
+    <article class="slider-wrapper theme-default">
+      <div id="slider" class="nivoSlider">
+        <% unless @offer.photo.nil? %>
+            <img class="carrousel-big-photo" src="<%= @offer.photo %>"
+                 style="height: 100%; width: 100%;" alt=""/>
+        <% end %>
+      </div>
+    </article>
+
+    <article class="tabs-wrapper">
+      <ul id="myTab" class="nav nav-tabs 3tabs">
+        <li class="active"><a href="#detalles" data-toggle="tab">Detalles</a></li>
+        <li><a href="#mapas" data-toggle="tab">Mapa</a></li>
+        <% if @user.company? %>
+            <li><a href="#clients" data-toggle="tab">Inscriptos</a></li>
+
+        <% end %>
+        <li><a href="#results" data-toggle="tab">Resultados</a></li>
+
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="detalles">
+          <h5> Descripción </h5>
+
+          <p> <%= @offer.description %></p>
+
+          <h5> Fechas </h5>
+
+          <p>
+            <b>Fecha de inicio:</b>
+            <%= @offer.start_date.strftime("%d/%m/%y") %>
+          </p>
+
+          <p>
+            <b>Fecha de finalización:</b>
+            <%= @offer.end_date.strftime("%d/%m/%y") %>
+          </p>
+
+          <h5> Inscripciones </h5>
+
+          <p> <%= @offer.clients.count %> clientes inscriptos </p>
+
+          <h5> Áreas de Interés </h5>
+          <ul>
+            <% @offer.titles.each do |title| %>
+                <li> <%= title.name %></li>
+            <% end %>
+          </ul>
+
+
+        </div>
+
+
+        <div class="tab-pane" id="mapas" align="center">
+
+          <%=  gmaps("map_options" => {
+               "zoom" => 13,
+                 "center_latitude" => @latitude,
+                 "center_longitude" => @longitude,
+                 "auto_adjust" => true,
+          }, "markers" => {"data" => @json}) %>
+
+        </div>
+
+
+
+        <div class="tab-pane" id="clients">
+          <h5> Los clientes que se han inscripto son: </h5>
+          <ul>
+            <% @offer.clients.each do |client| %>
+                <li> >   <%= "#{client.user.email} - #{client.first_name} #{client.last_name} " %></li>
+            <% end %>
+          </ul>
+
+
+        </div>
+
+        <div class="tab-pane" id="results">
+          <% if @offer.end_date < Date.current %>
+              <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th>
+                    Inscripto
+                  </th>
+                  <th>
+                    Posición
+                  </th>
+
+                </tr>
+
+                </thead>
+                <tbody>
+                <% @offer.clients.each do |client| %>
+                    <tr>
+                      <td>
+                        <%= "#{client.user.email} - #{client.first_name} #{client.last_name} " %>
+                      </td>
+                      <td>
+                        <% @offer_clients.each do |offer_client| %>
+                            <% if client.id == offer_client.client_id %>
+                                <% if !offer_client.participated %>
+                                    No Participó
+                                <% else %>
+                                    <%= offer_client.position %>
+                                <% end %>
+                            <% end %>
+
+                        <% end %>
+                      </td>
+
+                    </tr>
+                <% end %>
+                </tbody>
+              </table>
+          <% else %>
+              <ul>La oferta todavía no ha finalizado.</ul>
+          <% end %>
+
+          <% if @user.company? %>
+              <ul>
+                <%= link_to 'Editar resultados', offers_results_path(:id => @offer.id) %>
+              </ul>
+          <% end %>
+
+        </div>
+
+
+      </div>
+
+    </article>
+    <!--end tabs-wrapper-->
+
+  </div>
+
+</section>
+<!--end main content section-->
+
+<!--sidebar-->
+<aside class="span4 rounded-borders light-shadowed">
+  <div class="row rounded-borders-top">
+    <div class="span4 clearfix rounded-borders-top" style="background-color: grey;">
+      <div class="clock-wrapper rounded-borders-top">
+        <div class="clock-info">
+          <div class="clock-title pull-left">
+            <i class="icon-white icon-time"></i> Quedan</li>
+          </div>
+          <!--end clock-wrapper-->
+          <div class="clock-numbers pull-right">
+            <ul class="inline">
+              <% distance = time_distance(@offer.start_date.to_datetime) %>
+              <li>
+                <ul class="inline">
+                  <li><%= distance[:days] %> D</li>
+                </ul>
+              </li>
+              <li>
+                <ul class="inline">
+                  <li><%= distance[:hours] %> H</li>
+                </ul>
+              </li>
+              <li>
+                <ul class="inline">
+                  <li><%= distance[:minutes] %> M</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!--end clock-numbers-->
+        </div>
+
+      </div>
+    </div>
+    <!--end counter-->
+  </div>
+  <!--end row-->
+  <div class="row">
+    <div class="span4">
+      <div class="wrapper-padding">
+
+
+        <% unless @user.company? || @offer.finished? %>
+            <% clients_offer = ClientsOffer.where(:client_id => Client.where(:user_id => @user.id).first.id, :offer_id => @offer.id) %>
+            <% if clients_offer.first.nil? %>
+                <%= link_to 'Inscribir', users_inscribe_path(:offer_id => @offer.id), {:type => "button", :class => "btn btn-dealhunter medium full-width rounded-borders-btn", :method => :post, } %>
+            <% else %>
+                <%= link_to 'Desinscribir', users_unsubscribe_path(:clients_offers_id => clients_offer.first.id, :offer_id => @offer.id), {:type => "button", :class => "btn btn-dealhunter medium full-width rounded-borders-btn", :method => :post, } %>
+            <% end %>
+            <br>
+            <br>
+
+
+        <% end %>
+
+
+
+        <% i = 1 %>
+
+        <% @offer.prizes.each do |prize| %>
+            <div style="margin-bottom: 15px">
+              <ul class="accord-tab clearfix">
+                <li class="offer-number">Premio <%= i %> </li>
+                <li class="offer-title pull-left">
+
+                  <h3><%= prize.name %></h3>
+                </li>
+                <li>
+                  <ul class="offer-price-box pull-right">
+                    <li class="offer-discount"><%= "-" + prize.discount_percentage.to_i.to_s + "%" unless prize.nil? %> </li>
+                    <li class="offer-price">$<%= prize.discounted_price unless prize.nil? %></li>
+                  </ul>
+                </li>
+              </ul>
+              <!--end tab oferta-->
+
+
+              <% i= i +1 %>
+
+            </div>
+        <% end %>
+
+        <% unless @user.company? %>
+            <div style="margin-top: 20px;">
+              <ul class="accord-tab clearfix">
+                <li class="offer-number" style="margin-bottom: 15px"><h5>Recomendá esta oferta:</h5></li>
+
+
+                <li>
+
+
+                  <%= form_for(Message.new(), :url => {:action => "contact_recommendation", :controller => :pages}, :html => {:method => :post}) do |f| %>
+
+                      <div class="control-group clearfix" style="margin-bottom: 0">
+                        <%= f.text_field :email, :label => false, :input_html => {:class => "pull-right input-medium", :placeholder => "Email"}, :placeholder => "Email", :class => "input-large" %>
+                        <%= f.hidden_field :offer, :value => @offer.id %>
+                      </div>
+
+                      <div class="pull-left">
+                        <button type="submit" style="font-size: 11px;" class="btn btn-dealhunter rounded-borders-btn">Recomendar</button>
+                      </div>
+                      <br>
+                      <br>
+
+                  <% end %>
+                </li>
+              </ul>
+              <!--end tab oferta-->
+
+
+            </div>
+        <% end %>
+
+      </div>
+    </div>
+    <!--end wrapper padding-->
+  </div>
+
+
+</aside>
+<!--end sidebar-->
+
+</div>
+</div>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+  <%= favicon_link_tag %>
+  <meta charset="UTF-8">
+  <title>DealHunter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <!-- Le styles -->
+  <%= stylesheet_link_tag 'bootstrap.css' %>
+  <%= stylesheet_link_tag 'formtastic.css' %>
+  <%= stylesheet_link_tag 'dealhunter.css' %>
+  <%= stylesheet_link_tag 'gmaps4rails' %>
+
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+  <script src="/../assets/bootstrap-dropdown.js"></script>
+  <script src="/../assets/bootstrap-tab.js"></script>
+  <script src="/../assets/bootstrap-modal.js"></script>
+  <script src="/../assets/jquery_nested_form.js"></script>
+  <script src="/../assets/validationScript.js"></script>
+  <script src="/../assets/gmaps4rails/gmaps4rails.base.js.coffee"></script>
+  <script src="/../assets/gmaps4rails/gmaps4rails.bing.js.coffee"></script>
+  <script src="/../assets/gmaps4rails/gmaps4rails.googlemaps.js.coffee"></script>
+  <script src="/../assets/gmaps4rails/gmaps4rails.mapquest.js.coffee"></script>
+  <script src="/../assets/gmaps4rails/gmaps4rails.openlayers.js.coffee"></script>
+  <script src="http://localhost:9292/faye.js"></script>
+  <script src="/../assets/pushNotifications.js"></script>
+
+
+
+  <!--    <link href="/assets/bootstrap-responsive.css" rel="stylesheet">
+  -->
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="/assets/html5shiv.js"></script>
+  <![endif]-->
+
+  <!--[if gte IE 9]>
+  <link rel="stylesheet" type="text/css" href="/../assets/ie9.css"/>
+  <![endif]-->
+
+
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39073159-1']);
+      _gaq.push(['_setDomainName', 'dealhunter.com']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+          var ga = document.createElement('script');
+          ga.type = 'text/javascript';
+          ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(ga, s);
+      })();
+
+  </script>
+
+  <!--Start of Zopim Live Chat Script-->
+  <script type="text/javascript">
+      window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+              d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+              _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+          $.src='//v2.zopim.com/?1X5DSQSEOc3a7mCte2MgdBXNj5Xjf9RS';z.t=+new Date;$.
+                  type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+  </script>
+  <!--End of Zopim Live Chat Script-->
+
+</head>
+
+<% if user_signed_in? %>
+
+
+        <body id="page-micuenta">
+
+    <!--header-->
+    <header id="top" class="light-shadowed">
+      <div class="container">
+        <div class="row">
+          <div class="span3" id="logo-header"><a href="<%= root_path %>"><img src="/assets/logo-header.png"></a></div>
+
+          <div class="span6 offset3 clearfix" id="header-data">
+            <nav class="pull-left">
+              <ul class="span6">
+                <li class="user-message">Bienvenido <span><%= current_user.email %></span></li>
+                <li>
+
+                  <div class="btn-group">
+                    <a class="btn btn-dealhunter dropdown-toggle rounded-borders-btn" data-toggle="dropdown" href="#">
+                      <i class="icon-user icon-white"></i> Mi Cuenta
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
+                      <% if current_user.company? %>
+                        <li><a href="<%= users_offers_company_user_path %>">Mis Ofertas</a></li>
+                      <% else %>
+                          <li><a href="<%= users_offers_client_user_path %>">Mis Ofertas</a></li>
+                      <% end %>
+                      <li><a href="<%= edit_user_path(current_user) %>">Mi Perfil</a></li>
+                      <% if current_user.company? %>
+                        <li><a href="<%= users_branches_company_user_path %>">Mis sucursales</a></li>
+                      <%else%>
+                        <li><a href="<%= users_titles_user_path %>">Mis Intereses</a></li>
+                      <%end%>
+                      <li><a href="<%= users_statistics_path %>">Mis Estadísticas</a></li>
+                      <li><a href="#">Ayuda</a></li>
+                      <li class="divider"></li>
+                      <li><%= link_to "Salir", destroy_user_session_path, :method => :delete %></li>
+                    </ul>
+                  </div>
+                  <!--end btn-group-->
+                </li>
+              </ul>
+            </nav>
+
+          </div>
+          <!--end span6 offset3-->
+        </div>
+        <!--end row-->
+      </div>
+      <!--end container header-->
+    </header>
+    <!--end header-->
+
+    <%= yield %>
+    <%= yield :scripts %>
+
+    <div id="languages">
+      <a href="/users/home">
+        <img class="flag" src="/assets/bag2.png">
+     </a>
+    </div>
+
+    <!--footer-->
+
+    <footer id="footer-wrapper" class="dh-footer">
+      <div class="container">
+
+        <div id="footer-middle" class="row">
+          <div class="span7">
+            <nav>
+              <ul class="inline">
+                <li><a href="<%= pages_we_path %>">Quiénes Somos</a></li>
+                <li><a href="<%= pages_work_with_us_path %>">Trabajá con Nosotros</a></li>
+                <li><a href="<%= pages_form_company_path %>">Queres publicar?</a></li>
+                <li><a href="<%= pages_faqs_path %>">Ayuda</a></li>
+                <li><a href="<%= pages_form_contact_path %>">Contacto</a></li>
+              </ul>
+            </nav>
+            <p class="copyright">Copyright © 2013 DealHunter.com. Todos los derechos reservados</p>
+          </div>
+          <div class="span3">
+            <ul id="custumer-support" class="pull-right">
+              <li class="custumer-support-title">Atención al Cliente</li>
+              <li class="telephone-number">0800-111-DEAL(3315)</li>
+              <li class="contact-mail"><a href="#"><i class="icon-contact-mail"></i> info@dealhunter.com</a></li>
+            </ul>
+          </div>
+
+          <div class="span2">
+            <ul class="inline pull-right social">
+              <li><a href="#" target="_blank"><img src="/assets/icon-fb.png"></a></li>
+              <li><a href="https://twitter.com/dealhunterArg" target="_blank"><img src="/assets/icon-twitter.png"></a></li>
+              <li><a href="#" target="_blank"><img src="/assets/icon-gPlus.png"></a></li>
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+    <!--end footer-->
+
+
+<% else %>
+
+    <%= yield %>
+
+<% end %>
+

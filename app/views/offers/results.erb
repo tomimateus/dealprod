@@ -1,0 +1,104 @@
+<div class="container" id="main-content">
+  <div class="row">
+    <section class="span8 rounded-borders light-shadowed" style="background: #ffffff;">
+
+      <header class="out rounded-borders-top">
+        <h2>Resultados</h2>
+
+      </header>
+      <%= form_for @offer, :url => {:action => "save_results"} do |f| %>
+      <%= f.hidden_field :id %>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>
+            Inscripto
+          </th>
+          <th>
+            Posición
+          </th>
+
+        </tr>
+
+        </thead>
+        <tbody>
+        <% @offer.clients.each do |client| %>
+            <tr>
+              <td>
+                <%= "#{client.user.email} - #{client.first_name} #{client.last_name} " %>
+              </td>
+              <td>
+                      <% co = ClientsOffer.find_by_client_id_and_offer_id(client.id, @offer.id) %>
+                <select name="<%=client.user.id%>">
+                  <% i = 1 %>
+                  <% @offer_prizes.each do |f| %>
+                    <%#= select_tag "positions[]", i %>
+                      <% if co.position == i %>
+                        <option selected="selected">
+                      <% else %>
+                        <option>
+                      <% end %>
+                        <%= i %>
+                      </option>
+                      <% i = 1+1 %>
+
+                  <% end %>
+                  <% if co.position == 0 %>
+                      <option selected="selected">
+                  <% else %>
+                      <option>
+                  <% end %>
+                    No Participó
+                  </option>
+
+                </select>
+              </td>
+
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div class="wrapper-padding">
+        <hr>
+        <div class="text-center">
+          <button type="submit" class="btn btn-dealhunter rounded-borders-btn">Guardar</button>
+        </div>
+      </div>
+      <% end %>
+
+
+    </section>
+    <!--end main content-->
+
+
+    <!--sidebar-->
+    <aside class="span4" style="background: none;">
+
+      <div class="wrapper-padding rounded-borders light-shadowed" style="background: #ffffff;">
+
+        <h2 class="rounded-borders-btn">Detalle de Cuenta</h2>
+        <ul class="aside-nav">
+          <li><a href="<%= users_offers_company_user_path %>">Mis Ofertas</a></li>
+          <li><a href="<%= users_branches_company_user_path %>">Mis Sucursales</a></li>
+
+        </ul>
+        <h2 class="rounded-borders-btn">Información Personal</h2>
+        <ul class="aside-nav">
+          <li><a href="<%= edit_user_path(current_user) %>" class="active">Mi Perfil</a></li>
+        </ul>
+        <h2 class="rounded-borders-btn">Preferencias</h2>
+        <ul class="aside-nav">
+          <li><a href="<%= edit_user_registration_path %>">Contraseña</a></li>
+        </ul>
+      </div>
+
+    </aside>
+    <!--end sidebar-->
+  </div>
+  <!--end row-->
+</div>
+<!--end container-->
+
+
+
+       

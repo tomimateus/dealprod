@@ -1,0 +1,149 @@
+<% if current_user.nil? %>
+
+    <body id="page-micuenta">
+
+    <!--header-->
+    <header id="top" class="light-shadowed">
+    <div class="container">
+        <div class="row">
+          <div class="span3" id="logo-header"><a href="/offers"><img src="/assets/logo-header.png"></a></div>
+
+        </div>
+        <!--end row-->
+      </div>
+      <!--end container header-->
+    </header>
+    <!--end header-->
+
+
+    <div class="container" id="main-content" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+         xmlns="http://www.w3.org/1999/html">
+      <div class="rounded-borders ">
+        <section class="span11 rounded-borders light-shadowed">
+          <header class="out rounded-borders-top">
+          <h2>Acerca de Dealhunter</h2>
+          </header>
+
+          <div class="wrapper-padding">
+
+            <div class="wrapper">
+              <article>
+                <p>En DealHunter nos gustan las ofertas y los desafiós, por eso creamos esta web con el objetivo que vos
+                  te diviertas tanto como nosotros.</p>
+
+                <p>Cada día una nueva oferta, un nuevo entretenimiento, se el primero en llegar, obtene premios, los
+                  mejores descuentos en productos y servicios de primeras marcas.</p>
+
+                <p>Cada dia elegimos cuidadosamente nuestras ofertas junto a nuestro equipo de expertos.</p>
+
+                <p>Hacete socio ahora de dealhunter.com.ar y disfruta de nuestras exclusivas ofertas.</p>
+
+                <h5>Bienvenidos a dealhunter Argentina!</h5>
+
+              </article>
+
+              <hr>
+
+            </div>
+            <!--end wrapper-->
+          </div>
+          <!--end wrapper-padding-->
+        </section>
+        <!--end main content-->
+      </div>
+      <!--end container-->
+    </div>
+    <!--end row-->
+
+    <footer id="footer-wrapper" class="dh-footer">
+      <div class="container">
+
+
+        <hr>
+
+        <div id="footer-middle" class="row">
+          <div class="span7">
+            <nav>
+              <ul class="inline">
+                <li><a href="<%= pages_we_path %>">Quiénes Somos</a></li>
+                <li><a href="<%= pages_work_with_us_path %>">Trabajá con Nosotros</a></li>
+                <li><a href="<%= pages_form_company_path %>">Queres publicar?</a></li>
+                <li><a href="<%= pages_faqs_path %>">Ayuda</a></li>
+                <li><a href="<%= pages_form_contact_path%>">Contacto</a></li>
+              </ul>
+            </nav>
+            <p class="copyright">Copyright © 2013 DealHunter.com. Todos los derechos reservados</p>
+          </div>
+          <div class="span3">
+            <ul id="custumer-support" class="pull-right">
+              <li class="custumer-support-title">Atención al Cliente</li>
+              <li class="telephone-number">0800-111-DEAL(3315)</li>
+              <li class="contact-mail"><a href="#"><i class="icon-contact-mail"></i> info@dealhunter.com</a></li>
+            </ul>
+          </div>
+
+          <div class="span2">
+            <ul class="inline pull-right social">
+              <li><a href="#" target="_blank"><img src="/assets/icon-fb.png"></a></li>
+              <li><a href="https://twitter.com/dealhunterArg" target="_blank"><img src="/assets/icon-twitter.png"></a></li>
+              <li><a href="#" target="_blank"><img src="/assets/icon-gPlus.png"></a></li>
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+
+<% else %>
+
+    <div class="container" id="main-content" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+         xmlns="http://www.w3.org/1999/html">
+      <div class="rounded-borders ">
+        <section class="span11 rounded-borders light-shadowed">
+          <header class="out rounded-borders-top">
+            <h2>Acerca de Dealhunter</h2>
+          </header>
+
+          <div class="wrapper-padding">
+
+            <div class="wrapper">
+              <article>
+                <p>En DealHunter nos gustan las ofertas y los desafiós, por eso creamos esta web con el objetivo que vos
+                  te diviertas tanto como nosotros.</p>
+
+                <p>Cada día una nueva oferta, un nuevo entretenimiento, se el primero en llegar, obtene premios, los
+                  mejores descuentos en productos y servicios de primeras marcas.</p>
+
+                <p>Cada dia elegimos cuidadosamente nuestras ofertas junto a nuestro equipo de expertos.</p>
+
+                <p>Hacete socio ahora de dealhunter.com.ar y disfruta de nuestras exclusivas ofertas.</p>
+
+                <h5>Bienvenidos a dealhunter Argentina!</h5>
+
+              </article>
+
+              <hr>
+
+            </div>
+            <!--end wrapper-->
+          </div>
+          <!--end wrapper-padding-->
+        </section>
+        <!--end main content-->
+      </div>
+      <!--end container-->
+    </div><!--end row-->
+
+<% end %>
+
+<script type="text/javascript">
+    function removeId(){
+        $("#landing").attr("id", "page-faq");
+    }
+    removeId();
+
+</script>
+
+

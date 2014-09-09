@@ -1,0 +1,29 @@
+<h1>Listing clients_offers</h1>
+
+<table>
+  <tr>
+    <th>Offer</th>
+    <th>Client</th>
+    <th>Position</th>
+    <th>Participated</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @clients_offers.each do |clients_offer| %>
+  <tr>
+    <td><%= clients_offer.offer_id %></td>
+    <td><%= clients_offer.client_id %></td>
+    <td><%= clients_offer.position %></td>
+    <td><%= clients_offer.participated %></td>
+    <td><%= link_to 'Show', clients_offer %></td>
+    <td><%= link_to 'Edit', edit_clients_offer_path(clients_offer) %></td>
+    <td><%= link_to 'Destroy', clients_offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Clients offer', new_clients_offer_path %>

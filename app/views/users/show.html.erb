@@ -1,0 +1,111 @@
+<div class="container" id="main-content">
+  <div class="row">
+    <section class="span8">
+
+      <header class="out">
+        <h2>Información de Usuario</h2>
+      </header>
+
+      <%= semantic_nested_form_for [@user] do |f|%>
+          <div class="wrapper">
+            <article class="row">
+              <div class="span4">
+                <div class="wrapper-padding">
+
+                      <div class="control-group clearfix">
+                        <label class="pull-left" for="inputEmail">Nombre: </label>
+                        <%= @user.client.first_name %>
+                      </div>
+
+                      <div class="control-group clearfix">
+                        <label class="pull-left" for="inputDireccion">Calle</label>
+                        <%= @user.client.address.street%>
+                      </div>
+
+                      <div class="control-group clearfix">
+                        <label class="pull-left" for="inputLocalidad">Piso</label>
+                        <%= @user.client.address.floor%>
+                      </div>
+
+                      <div class="control-group clearfix">
+                        <label class="pull-left" for="inputLocalidad">Localidad</label>
+                        <%=@user.client.address.city%>
+                      </div>
+
+                      <div class="control-group clearfix">
+                        <label class="pull-left" for="inputPais">País</label>
+                        <%=@user.client.address.country%>
+                      </div>
+
+                </div><!--end wrapper-padding-->
+              </div><!--end span4-->
+
+              <div class="span4">
+                <div class="wrapper-padding">
+
+                  <div class="control-group clearfix">
+                    <label class="pull-left" for="inputApellido">Apellido</label>
+                    <%=@user.client.last_name%>
+                  </div>
+
+                  <div class="control-group clearfix">
+                    <label class="pull-left" for="inputProvincia">Provincia</label>
+                    <%=@user.client.address.state %>
+                  </div>
+
+                  <div class="control-group clearfix">
+                    <label class="pull-left" for="inputProvincia">Número</label>
+                    <%=@user.client.address.number%>
+                  </div>
+
+                  <div class="control-group clearfix">
+                    <label class="pull-left" for="inputEmail">Email</label>
+                    <%= @user.client.email %>
+                  </div>
+
+                </div><!--end wrapper-padding-->
+              </div><!--end span4-->
+            </article>
+
+            <% if !session[:flash].nil? %>
+                <div class="alert" id="login-alert">
+                  <%= session[:flash][:notice] %>
+                </div>
+            <% end %>
+
+            <div class="wrapper-padding">
+              <hr>
+              <div class="text-center">
+
+                <a class="btn btn-dealhunter" href ="<%= users_edit_path(@user)%>">Editar Informacion</a>
+              </div>
+            </div><!--end wrapper-padding-->
+          </div><!--end wrapper-->
+
+      <% end%>
+    </section>
+    <!--end main content-->
+
+    <!--sidebar-->
+    <aside class="span4">
+
+      <div class="wrapper-padding">
+
+        <h2>Detalle de Cuenta</h2>
+        <ul class="aside-nav">
+          <li><a href="#">Mis Ofertas</a></li>
+          <li><a href="<%= users_titles_user_path %>">Preferencias</a></li>
+        </ul>
+        <h2>Información Personal</h2>
+        <ul class="aside-nav">
+          <li><a href="<%= edit_user_path(current_user)%>" class="active">Mi Perfil</a></li>
+          <li><a href="<%= users_statistics_path %>">Mis Estadísticas</a></li>
+        </ul>
+        <h2>Preferencias</h2>
+        <ul class="aside-nav">
+          <li><a href="#">Contraseña</a></li>
+        </ul>
+      </div>
+    </aside><!--end sidebar-->
+  </div><!--end container-->
+</div><!--end row-->

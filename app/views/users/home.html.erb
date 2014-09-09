@@ -1,0 +1,102 @@
+<div class="container" id="main-content2">
+  <div class="row">
+
+      <div class="offset1 span4 offer-small rounded-borders">
+
+        <ul class="flap-items">
+          <li class="img_item">
+            <div class="caption">
+              <ul class="time-left pull-left">
+                <li>
+                  <ul class="inline" style="margin-top:8px;">
+                    <li><ul class="inline">
+                      <p>Mirá toda la información necesaria para</p>
+                      <p>participar de las últimas ofertas!</p>
+                    </ul></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <img class="small-photo rounded-borders-top" src="/assets/home/home1.png" alt="" />
+          </li>
+        </ul>
+
+        <div class="row">
+          <div class="span4" style="position:relative;">
+            <img src="../assets/arrow-opentab.jpg" class="button-arrow">
+            <div class="wrapper-padding">
+              <ul class="inline hotel-item clearfix">
+                <li class="pull-left">
+                  <h4 class="media-heading">Ofertas</h4>
+                  <h5> Info de últimas ofertas </h5>
+                </li>
+                <li class="pull-right">
+                  <a href="<%= users_home_view_path%>"><button type="button" class="btn btn-dealhunter medium full-width rounded-borders-btn" id="btn-inscribite">Ver Ofertas</button></a>
+                </li>
+              </ul>
+            </div><!--end wrapper-padding-->
+          </div><!--end span4-->
+        </div><!--end row-->
+
+      </div>
+
+
+
+      <div class="offset2 span4 offer-small rounded-borders">
+
+        <ul class="flap-items">
+          <li class="img_item">
+            <div class="caption">
+              <ul class="time-left pull-left">
+                <li>
+                  <ul class="inline" style="margin-top:8px;">
+                    <li><ul class="inline">
+                      <p>Mirá todas las ofertas localizadas </p>
+                      <p>en el mapa!</p>
+                    </ul></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <img class="small-photo rounded-borders-top" src="/assets/home/home2.png" alt="" />
+          </li>
+        </ul>
+
+        <div class="row">
+          <div class="span4" style="position:relative;">
+            <img src="../assets/arrow-opentab.jpg" class="button-arrow">
+            <div class="wrapper-padding">
+              <ul class="inline hotel-item clearfix">
+                <li class="pull-left">
+                  <h4 class="media-heading">Mapa</h4>
+                  <h5> Mapa con las últimas ofertas </h5>
+                </li>
+                <li class="pull-right">
+                  <a href="<%= users_home_map_path%>"><button type="button" class="btn btn-dealhunter medium full-width rounded-borders-btn" id="btn-inscribite">Ver Mapa</button></a>
+                </li>
+              </ul>
+            </div><!--end wrapper-padding-->
+          </div><!--end span4-->
+        </div><!--end row-->
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    function removeId(){
+        $("#landing").attr("id", "page-faq");
+    }
+    removeId();
+
+</script>
+
+<script type="text/javascript">
+    startFaye(<%=current_user.id%>);
+</script>
+<style>
+  #footer-wrapper{
+      margin-top: 1% !important;
+  }
+</style>
+

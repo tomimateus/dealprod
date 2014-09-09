@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  offer_id: 1
+  name: MyString
+  real_price: 9.99
+  discount_percentage: 9.99
+
+two:
+  offer_id: 1
+  name: MyString
+  real_price: 9.99
+  discount_percentage: 9.99

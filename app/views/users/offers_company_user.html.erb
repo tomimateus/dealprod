@@ -1,0 +1,316 @@
+<div class="container" id="main-content">
+  <div class="row">
+    <section class="span8 rounded-borders light-shadowed">
+
+      <a href="<%= new_offer_path %>" role="button" >
+        <h2 id="recommend-to-friend" class="pull-right rounded-borders light-shadowed">Nueva oferta</h2>
+      </a>
+
+
+      <header class="out rounded-borders-top">
+        <h2>Ofertas</h2>
+      </header>
+
+      <div class="wrapper-padding">
+
+        <div class="wrapper">
+          <article>
+
+            <%unless flash[:notice].nil? %>
+                <div class="alert">
+                  <%= flash[:notice]%>
+                </div>
+            <%end%>
+
+            <ul id="myTab" class="nav nav-tabs">
+              <li class="active"><a href="#all" data-toggle="tab" id="all-tab">Todas</a></li>
+              <li><a href="#active" data-toggle="tab" id="actual-tab">Activas</a></li>
+              <li><a href="#old" data-toggle="tab" id="old-tab">Finalizadas</a></li>
+            </ul>
+
+            <div id="myTabContent" class="tab-content">
+
+              <div class="tab-pane fade in active clearfix" id="all">
+                <% if @offers.empty? %>
+
+                    <div class="media hotel-item">
+
+                      <div class="media-body">
+                        <h5 style="text-align: center;">Aún no cargaste ninguna oferta</h5>
+                      </div>
+                      <!--end media-body-->
+                    </div>
+                    <!--end media-->
+
+
+                <% else %>
+
+                    <% @offers.each do |offer| %>
+
+                        <div class="media hotel-item">
+                          <a class="pull-left" href="#offer_<%= offer.id %>">
+                            <% unless offer.photo.nil? %>
+                                <img src="<%= offer.photo %>" class="media-object imgSize">
+                            <% end %>
+                          </a>
+
+                          <div class="media-body">
+                            <h4 class="media-heading">
+                              <a href="#offer_<%= offer.id %>" role="button" data-toggle="modal"><%= offer.name %></a>
+                            </h4>
+                            <h5><%= offer.start_date.strftime('%d/%m/%Y') %>
+                              <b> | </b> <%= offer.end_date.strftime('%d/%m/%Y') %></h5>
+                            <div class="offer-btns-div">
+                            <%= button_to 'Eliminar Oferta', offer_path(offer),
+                                              :confirm => 'Está seguro?', :method => :delete %>
+
+                              <%= button_to 'Ver Detalles', offer_path(offer), :method => :put%></td>
+                              <%= link_to 'Editar', edit_offer_path(offer)%>
+                            </div>
+                          </div>
+                          <!--end media-body-->
+
+                        </div>
+                        <!--end media-->
+
+                    <% end %>
+                    <%= paginate @offers %>
+                <% end %>
+
+
+              </div>
+              <!--end myTabContent-->
+
+              <div class="tab-pane fade" id="active">
+
+                <% if @actual_offers.empty? %>
+
+                    <div class="media hotel-item">
+
+                      <div class="media-body">
+                        <h5 style="text-align: center;">No posees ofertas activas al momento</h5>
+                      </div>
+                      <!--end media-body-->
+                    </div>
+                    <!--end media-->
+
+
+                <% else %>
+
+                    <% @actual_offers.each do |offer| %>
+
+                        <div class="media hotel-item">
+                          <a class="pull-left" href="#">
+                            <% unless offer.photo.nil? %>
+                                <img src="<%= offer.photo %>" class="media-object imgSize">
+                            <% end %>
+                          </a>
+
+                          <div class="media-body">
+                            <h4 class="media-heading">
+                              <a href="#offer_<%= offer.id %>" role="button" data-toggle="modal"><%= offer.name %></a>
+                            </h4>
+                            <h5><%= offer.start_date.strftime('%d/%m/%Y') %>
+                              <b> | </b> <%= offer.end_date.strftime('%d/%m/%Y') %></h5>
+                          </div>
+                          <!--end media-body-->
+                          <td><%= button_to 'Eliminar Oferta', offer_path(offer),
+                                            :confirm => 'Está seguro?', :method => :delete %>
+
+                            <%= button_to 'Ver Detalles', offer_path(offer), :method => :put%></td>
+                        </div>
+                        <!--end media-->
+
+                    <% end %>
+                <% end %>
+
+
+              </div>
+              <div class="tab-pane fade" id="old">
+                <% if @old_offers.empty? %>
+
+                    <div class="media hotel-item">
+
+                      <div class="media-body">
+                        <h5 style="text-align: center;">No posees ofertas finalizadas</h5>
+                      </div>
+                      <!--end media-body-->
+                    </div>
+                    <!--end media-->
+
+
+                <% else %>
+
+                    <% @old_offers.each do |offer| %>
+
+                        <div class="media hotel-item">
+                          <a class="pull-left" href="#">
+                            <% unless offer.photo.nil? %>
+                                <img src="<%= offer.photo %>" class="media-object imgSize">
+                            <% end %>
+                          </a>
+
+                          <div class="media-body">
+                            <h4 class="media-heading">
+                              <a href="#offer_<%= offer.id %>" role="button" data-toggle="modal"><%= offer.name %></a>
+                            </h4>
+                            <h5><%= offer.start_date.strftime('%d/%m/%Y') %>
+                              <b> | </b> <%= offer.end_date.strftime('%d/%m/%Y') %></h5>
+
+                          </div>
+                          <!--end media-body-->
+                          <td><%= button_to 'Eliminar Oferta', offer_path(offer),
+                                            :confirm => 'Está seguro?', :method => :delete %>
+
+                            <%= button_to 'Ver Detalles', offer_path(offer), :method => :put%></td>
+
+                        </div>
+                        <!--end media-->
+
+                    <% end %>
+
+                <% end %>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+        <!--end wrapper-->
+      </div>
+    </section>
+    <!--end main content-->
+
+    <!--sidebar-->
+    <aside class="span4" style="background: none;">
+
+      <div class="wrapper-padding rounded-borders light-shadowed" style="background: #ffffff;">
+
+        <h2 class="rounded-borders-btn">Detalle de Cuenta</h2>
+        <ul class="aside-nav">
+          <li><a href="<%= users_offers_company_user_path %>" class="active">Mis Ofertas</a></li>
+          <li><a href="<%= users_branches_company_user_path %>">Mis Sucursales</a></li>
+        </ul>
+        <h2 class="rounded-borders-btn">Información Personal</h2>
+        <ul class="aside-nav">
+          <li><a href="<%= edit_user_path(current_user) %>">Mi Perfil</a></li>
+          <li><a href="<%= users_statistics_path %>">Mis Estadísticas</a></li>
+        </ul>
+        <h2 class="rounded-borders-btn">Preferencias</h2>
+        <ul class="aside-nav">
+          <li><a href="<%= edit_user_registration_path %>">Contraseña</a></li>
+        </ul>
+        </ul>
+      </div>
+      <!--<div id="bags">-->
+      <!--<div id="stage">-->
+      <!--<div id="block"></div>-->
+      <!--</div>-->
+      <!--</div>-->
+    </aside>
+    <!--end sidebar-->
+  </div>
+  <!--end container-->
+</div><!--end row-->
+
+
+
+
+
+<% @offers.each do |offer| %>
+
+    <div id="offer_<%= offer.id %>" class="modal modal-window hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="label"><%= offer.name %> </h3>
+      </div>
+      <div class="modal-body">
+        <div class="media hotel-item">
+          <a class="pull-right" href="#">
+            <% unless offer.photo.nil? %>
+                <img src="<%= offer.photo %>" class="media-object imgCenter">
+            <% end %>
+          </a>
+
+          <div class="media-body">
+            <p>
+              <b>Fecha de inicio:</b>
+              <%= offer.start_date.strftime("%d/%m/%y %H:%M") %>
+            </p>
+
+            <p>
+              <b>Fecha de finalización:</b>
+              <%= offer.end_date.strftime("%d/%m/%y %H:%M") %>
+            </p>
+          </div>
+          <!--end media-body-->
+          <hr>
+          <p>
+            <b>Clientes adheridos: </b>
+            <%= offer.clients.count %>
+          </p>
+
+
+          </hr>
+
+          <hr>
+          <!--<p class="row">-->
+
+         <p><b>Premio: </b>
+
+              <% i=1 %>
+              <% offer.prizes.each do |prize| %>
+                  <%= i %>) <%= prize.name %> <br/><b>Precio:</b> $<%= prize.real_price %><br/><b>Descuento:</b>(%<%= prize.discount_percentage %>
+
+
+                  <% i+=1 %> )
+              <% end %>
+         </p>
+
+          <hr>
+          <p><b>Sucursal: </b>
+              <%= offer.branch.name unless offer.branch.nil? %>
+
+
+
+          </p> </hr>
+
+
+
+
+          </div>
+
+          <!--</p>-->
+          </hr>
+
+          </hr>
+
+        </div>
+
+      </div>
+    </div>
+
+<% end %>
+
+<script type="text/javascript">
+    $(function () {
+        $('.datePicker').each(function () {
+            $(this).datepicker();
+        });
+    });
+
+    function old_click() {
+        document.getElementById("old-tab").click();
+        console.log("click");
+    }
+
+    function actual_click() {
+        document.getElementById("actual-tab").click();
+        console.log("click");
+    }
+
+
+</script>
+

@@ -1,0 +1,177 @@
+<div class="container" id="main-content">
+  <div class="row">
+    <section class="span8 rounded-borders light-shadowed">
+
+
+
+      <header class="out rounded-borders-top">
+        <h2>Ofertas</h2>
+      </header>
+
+      <div class="wrapper-padding">
+
+        <div class="wrapper">
+          <article>
+
+            <ul id="myTab" class="nav nav-tabs">
+              <li class="active"><a href="#home" data-toggle="tab">Todas</a></li>
+              <li><a href="#profile" data-toggle="tab">Activas</a></li>
+              <li><a href="#completadas" data-toggle="tab">Finalizadas</a></li>
+            </ul>
+
+            <div id="myTabContent" class="tab-content">
+
+              <div class="tab-pane fade in active clearfix" id="home">
+
+               <% if @offers.empty?%>
+
+                    <div class="media hotel-item">
+
+                      <div class="media-body">
+                        <h5 style="text-align: center;">Aún no te inscribiste en ninguna oferta</h5>
+                      </div><!--end media-body-->
+                    </div><!--end media-->
+
+
+               <% else %>
+
+
+                        <% @offers.each do |offer| %>
+
+                            <div class="media hotel-item">
+                              <a class="pull-left" href="#">
+                                <% unless offer.photo.nil? %>
+                                    <img src="<%= offer.photo%>" class="media-object imgSize">
+                                <%end%>
+                              </a>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="<%= offer_path(offer) %>"><%= offer.name %></a></h4>
+                                <h5><%=offer.start_date.strftime('%d/%m/%Y') %> <b>|</b> <%= offer.end_date.strftime('%d/%m/%Y')%></h5>
+                                <p><%=  Company.find_by_id(offer.branch.company_id).name %></p>
+                              </div><!--end media-body-->
+                            </div><!--end media-->
+
+                        <% end %>
+
+                        <%= paginate @offers %>
+
+               <% end %>
+
+
+              </div><!--end myTabContent-->
+
+              <div class="tab-pane fade" id="profile">
+
+                <% if @actual_offers.empty?%>
+
+                        <div class="media hotel-item">
+
+                          <div class="media-body">
+                            <h5 style="text-align: center;">No posees ofertas activas al momento</h5>
+                          </div><!--end media-body-->
+                        </div><!--end media-->
+
+
+                <% else %>
+
+                        <% @actual_offers.each do |offer| %>
+
+                            <div class="media hotel-item">
+                              <a class="pull-left" href="#">
+                                <% unless offer.photo.nil? %>
+                                    <img src="<%= offer.photo%>" class="media-object imgSize">
+                                <%end%>
+                              </a>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a href="<%= offer_path(offer) %>"><%= offer.name %></a></h4>
+                                <h5><%=offer.start_date.strftime('%d/%m/%Y') %> <b>|</b> <%= offer.end_date.strftime('%d/%m/%Y')%></h5>
+                                <p><%=  Company.find_by_id(offer.branch.company_id).name %></p>
+                              </div><!--end media-body-->
+                            </div><!--end media-->
+
+                        <% end %>
+
+                        <%= paginate @actual_offers %>
+              <% end %>
+
+
+              </div>
+              <div class="tab-pane fade" id="completadas">
+
+                <% if @old_offers.empty?%>
+
+                    <div class="media hotel-item">
+
+                      <div class="media-body">
+                        <h5 style="text-align: center;">No hay ofertas finalizadas en las que hayas participado</h5>
+                      </div><!--end media-body-->
+                    </div><!--end media-->
+
+
+                <% else %>
+
+                    <% @old_offers.each do |offer| %>
+
+                        <div class="media hotel-item">
+                          <a class="pull-left" href="#">
+                            <% unless offer.photo.nil? %>
+                                <img src="<%= offer.photo%>" class="media-object imgSize">
+                            <%end%>
+                          </a>
+                          <div class="media-body">
+                            <h4 class="media-heading"><a href="<%= offer_path(offer) %>"><%= offer.name %></a></h4>
+                            <h5><%=offer.start_date.strftime('%d/%m/%Y') %> <b>|</b> <%= offer.end_date.strftime('%d/%m/%Y')%></h5>
+                            <p><%= Company.find_by_id(offer.branch.company_id).name %></p>
+                          </div><!--end media-body-->
+                        </div><!--end media-->
+
+                    <% end %>
+
+                    <%= paginate @old_offers %>
+
+                <% end %>
+
+
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+        <!--end wrapper-->
+      </div>
+    </section>
+    <!--end main content-->
+
+    <!--sidebar-->
+    <aside class="span4" style="background: none;">
+
+      <div class="wrapper-padding rounded-borders light-shadowed" style="background: #ffffff;">
+
+        <h2 class="rounded-borders-btn">Detalle de Cuenta</h2>
+        <ul class="aside-nav">
+          <li><a href="<%= users_offers_client_user_path %>" class="active">Mis Ofertas</a></li>
+          <li><a href="<%= users_titles_user_path %>">Mis Intereses</a></li>
+        </ul>
+        <h2 class="rounded-borders-btn">Información Personal</h2>
+        <ul class="aside-nav">
+          <li><a href="<%= edit_user_path(current_user)%>">Mi Perfil</a></li>
+          <li><a href="<%= users_statistics_path %>">Mis Estadísticas</a></li>
+        </ul>
+        <h2 class="rounded-borders-btn">Preferencias</h2>
+        <ul class="aside-nav">
+          <li><a href="<%= edit_user_registration_path %>">Contraseña</a></li>        </ul>
+        <ul class="aside-nav">
+          <li><a href="<%= users_newsletter_freq_path %>">Frecuencia del newsletter</a></li>        </ul>
+        </ul>
+      </div>
+      <!--<div id="bags">-->
+      <!--<div id="stage">-->
+      <!--<div id="block"></div>-->
+      <!--</div>-->
+      <!--</div>-->
+    </aside><!--end sidebar-->
+  </div><!--end container-->
+</div><!--end row-->

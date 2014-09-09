@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Offer:</b>
+  <%= @offers_title.offer_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @offers_title.title_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_offers_title_path(@offers_title) %> |
+<%= link_to 'Back', offers_titles_path %>

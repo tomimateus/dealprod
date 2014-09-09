@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @newsletter_frequency.name %>
+</p>
+
+<p>
+  <b>Days:</b>
+  <%= @newsletter_frequency.days %>
+</p>
+
+
+<%= link_to 'Edit', edit_newsletter_frequency_path(@newsletter_frequency) %> |
+<%= link_to 'Back', newsletter_frequencies_path %>

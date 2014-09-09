@@ -1,0 +1,273 @@
+<%if  current_user.company? %>
+<div class="container" id="main-content">
+<div class="row">
+  <section class="span8 rounded-borders light-shadowed" style="background: #ffffff;">
+
+
+    <header class="out rounded-borders-top">
+      <h2>Editar Oferta</h2>
+
+    </header>
+    <%= semantic_nested_form_for [@offer] do |f| %>
+        <div class="wrapper">
+          <article class="row">
+            <div class="shade" id="shade">
+            </div>
+            <div class="modal" id="modal">
+              <div class="container" id="main-content">
+                <div class="row">
+                  <section class="span8 rounded-borders light-shadowed" style="height: 640px">
+                    <div class="wrapper">
+                      <article class="row">
+                        <% Title.all.each do |p2| %>
+                            <% if (p2.id== 1 || p2.id==5 || p2.id==9) %>
+                                <div class="row">
+                                  <div class="wrapper-padding">
+                            <% end %>
+
+                            <div class="my-span2" style="width: 135px">
+                              <div class="roundedTwo">
+                                <%= check_box_tag "title_ids[]", p2.id, @offer.prefer(p2), :id => p2.id %>
+                                <label for="<%= p2.id %>" style="background: url('/assets/<%= p2.icon_name%>.png') no-repeat no-repeat; background-size: 100px"></label>
+                              </div>
+                            </div>
+
+                            <% if (p2.id== 4 || p2.id==8 || p2.id==12) %>
+                                </div>
+                                </div>
+                            <% end %>
+                        <% end %>
+                        <br>
+
+                      </article>
+                      <% if !session[:flash].nil? %>
+                          <% if !session[:flash][:notice].nil? %>
+                              <div class="alert" id="login-alert">
+                                <%= session[:flash][:notice] %>
+                              </div>
+                          <% end %>
+                      <% end %>
+
+                      <div>
+                        <div class="text-center">
+                          <a id="btn" class="btn btn-dealhunter rounded-borders-btn">Grabar</a>
+                        </div>
+                      </div>
+                      <!--end wrapper-padding-->
+                    </div>
+
+                  </section>
+                </div>
+              </div>
+            </div>
+
+            <div class="span4">
+              <div class="wrapper-padding">
+                <div class="control-group clearfix">
+                  <label class="pull-left" for="inputEmail">Nombre</label>
+                  <%= f.input :name, :label => false, :input_html => {:class => "pull-right input-medium", :placeholder => "Nombre"} %>
+                </div>
+                <div class="control-group clearfix">
+                  <label class="pull-left" for="inputEmail">Fecha de inicio</label>
+                  <%= f.input :start_date, :as => :string, :input_html => {:class => 'datepicker pull-right input-medium datepicker', :value => @offer.start_date.to_date}, :label => false %>
+                </div>
+                <div class="control-group clearfix" style="margin-right: 105px;" >
+                  <label class="pull-left" for="inputEmail">Hora de inicio</label>
+                  <select id="offer_start_hour" name="offer[start_hour]" class="pull-right input-mini">
+                    <option value="<%= @offer.start_date.hour %>"><%=@offer.start_date.hour %></option>
+                    <% for i in 0..23 %>
+                        <option value="<%= i %>"><%= i %></option>
+                    <% end %>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="span4">
+              <div class="wrapper-padding">
+                <div class="control-group clearfix">
+                  <label class="pull-left" for="inputEmail">Sucursal</label>
+                  <%= f.input :branch, :input_html => {:class => 'pull-right input-medium-large '}, :label => false, :required => true, :as => :select, :prompt => "Seleccione Sucursal", :collection => Branch.where("company_id = ?", Company.where("user_id = ?", current_user.id)) %>
+                </div>
+                <div class="control-group clearfix">
+                  <label class="pull-left" for="inputEmail">Fecha de fin</label>
+                  <%= f.input :end_date, :as => :string, :input_html => {:class => 'datepicker pull-right input-medium datepicker', :value => @offer.end_date.to_date }, :label => false %>
+                </div>
+                <div class="control-group clearfix" style="margin-right: 105px;">
+                  <label class="pull-left" for="inputEmail">Hora de fin</label>
+                  <select id="offer_end_hour" name="offer[end_hour]" class="pull-right input-mini">
+                    <option value="<%= @offer.end_date.hour %>"><%=@offer.end_date.hour %></option>
+                    <% for i in 0..23 %>
+                        <option value="<%= i %>"><%= i %></option>
+                    <% end %>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="span8">
+              <div class="wrapper-padding2">
+                <div class="control-group clearfix">
+                  <label class="pull-left" for="inputEmail">Imagen</label>
+                  <%= f.input :photo, :label => false, :input_html => {:class => "pull-right2 input-fullwidth" ,:style => "width: 479px;", :placeholder => "Imagen"} %>
+                </div>
+                <div class="control-group clearfix">
+                  <label class="pull-left" for="inputEmail">Descripción</label>
+                  <%= f.input :description, :label => false, :input_html => {:class => "pull-right2 input-fullwidth", :placeholder => "Descripción", :style => "width: 468px; height: 100px; margin-left: 45px;"} %>
+                </div>
+              </div>
+            </div>
+            <div class="span8">
+              <% f.object.prizes.build unless !f.object.prizes.blank? %>
+              <%= f.semantic_fields_for :prizes do |prize| %>
+                  <%= prize.inputs "Premio" do %>
+                      <%= prize.input :name, :label => false, :input_html => {:class => "pull-right input-medium", :placeholder => "Nombre", :style => "width: 165px;
+                          margin-left: 20px;
+                          margin-right: 5px;float: left;"} %>
+                      <%= prize.input :real_price, :label => false, :input_html => {:class => "pull-right input-medium", :placeholder => "Precio Real", :style => "width: 120px;
+                          margin-left: 10px;
+                          margin-right: 5px;float: left;"} %>
+                      <%= prize.input :discount_percentage, :label => false, :input_html => {:class => "pull-right input-medium", :placeholder => "% Descuento", :style => "width: 120px;
+                          margin-left: 10px;
+                          margin-right: 5px; float: left;"} %>
+                      <div style="float: right;
+                              margin-right: 50px;
+                              margin-top: 5px;">
+                        <%= prize.link_to_remove "Eliminar", :class => "button_remove" %>
+                      </div>
+                  <% end %>
+              <% end %>
+              <div id="add_claim_messages" style="margin-top: 10px;">
+                <%= f.link_to_add "Agregar premio", :prizes, :class => "button" %>
+              </div>
+              <div id="visibleModal" style="margin-top: 10px;"><a class="button">Cargar Intereses</a>
+
+              </div>
+
+            </div>
+            <script type="text/javascript">
+                assignOfferValidation();
+            </script>
+
+          </article>
+
+          <% if !session[:flash].nil? %>
+              <% if !session[:flash][:notice].nil? %>
+                  <div class="alert" id="login-alert">
+                    <%= session[:flash][:notice] %>
+                  </div>
+              <% end %>
+          <% end %>
+
+          <div class="wrapper-padding">
+            <hr>
+            <div class="text-center">
+              <button type="submit" class="btn btn-dealhunter rounded-borders-btn">Actualizar Información</button>
+            </div>
+          </div>
+          <!--end wrapper-padding-->
+        </div><!--end wrapper-->
+    <% end %>
+
+
+  </section>
+  <!--end main content-->
+
+
+  <!--sidebar-->
+  <aside class="span4" style="background: none;">
+
+    <div class="wrapper-padding rounded-borders light-shadowed" style="background: #ffffff;">
+
+      <h2 class="rounded-borders-btn">Detalle de Cuenta</h2>
+      <ul class="aside-nav">
+        <li><a href="<%= users_offers_company_user_path %>">Mis Ofertas</a></li>
+        <li><a href="<%= users_branches_company_user_path %>">Mis Sucursales</a></li>
+
+      </ul>
+      <h2 class="rounded-borders-btn">Información Personal</h2>
+      <ul class="aside-nav">
+        <li><a href="<%= edit_user_path(current_user) %>" class="active">Mi Perfil</a></li>
+        <li><a href="<%= users_statistics_path %>">Mis Estadísticas</a></li>
+      </ul>
+      <h2 class="rounded-borders-btn">Preferencias</h2>
+      <ul class="aside-nav">
+        <li><a href="<%= edit_user_registration_path %>">Contraseña</a></li>
+      </ul>
+    </div>
+    <!--<div id="bags">-->
+    <!--<div id="stage">-->
+    <!--<div id="block"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+  </aside>
+  <!--end sidebar-->
+</div>
+<!--end container-->
+</div><!--end row-->
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<style type="text/css">
+
+    #shade, #modal {
+        display: none;
+    }
+
+    #shade {
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    #modal {
+        position: fixed;
+        z-index: 101;
+        top: 43%;
+        left: 50%;
+        width: 0px;
+        height: 0px;
+        margin-left: -308px;
+        margin-top: -300px;
+    }
+
+    #shade {
+        background: #000000;
+        opacity: 0.5;
+        filter: alpha(opacity=100);
+    }
+</style>
+
+<script>
+
+    document.getElementById('shade').onclick = function () {
+        modal.style.display = shade.style.display = 'none';
+    };
+
+    document.getElementById('btn').onclick = function () {
+        modal.style.display = shade.style.display = 'none';
+    };
+
+    document.getElementById('visibleModal').onclick = function () {
+        modal.style.display = shade.style.display = 'block';
+    };
+
+
+    $(function () {
+        $('.datepicker').datepicker({
+            dateFormat: "dd-mm-yy",
+            firstDay: 1,
+            dayNamesMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+            dayNamesShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
+            monthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
+                "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+            monthNamesShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun",
+                "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
+        });
+    });
+
+</script>
+<% end %>

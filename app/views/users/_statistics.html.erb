@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>The very first organization diagram</title>
+
+  <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+
+  <script type='text/javascript'>//<![CDATA[
+  var m_timer = null;
+
+  jQuery(document).ready(function ()
+  {
+      $("div#footer").empty();
+      $("div#footer").append("<a href='/'><img  src='/assets/flip_logo_aadmin.png' width='90px' height='35px' style='margin-top: 35px;'/></a> ");
+      $("div#footer").css("float", "right");
+  });
+
+
+  </script>
+</head>
+<body>
+<div id="myfirstchart" style="height: 275px;"></div>
+</body>
+</html>
+<script>
+
+    new Morris.Donut({
+        // ID of the element in which to draw the chart.
+        element: 'myfirstchart',
+        // Chart data records -- each entry in this array corresponds to a point on
+        // the chart.
+
+
+        data: [
+
+            {label: "A", value: 50 },
+            {label: "B", value: 50 }
+
+        ],
+
+        colors: [
+            '#e23351',
+            '#0BA462'
+        ]
+
+    });
+</script>

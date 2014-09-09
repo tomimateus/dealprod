@@ -1,0 +1,25 @@
+<h1>Listing newsletter_frequencies</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Days</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @newsletter_frequencies.each do |newsletter_frequency| %>
+  <tr>
+    <td><%= newsletter_frequency.name %></td>
+    <td><%= newsletter_frequency.days %></td>
+    <td><%= link_to 'Show', newsletter_frequency %></td>
+    <td><%= link_to 'Edit', edit_newsletter_frequency_path(newsletter_frequency) %></td>
+    <td><%= link_to 'Destroy', newsletter_frequency, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Newsletter frequency', new_newsletter_frequency_path %>
